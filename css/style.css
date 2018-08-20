@@ -149,6 +149,7 @@ main h4{
 
 main p{
   margin-left: 20px;
+  margin-right: 10vw;
 }
 
 main h4{
@@ -308,4 +309,19 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
+}
+
+.movie-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
+  height: 0;
+  overflow: hidden;
+}
+
+.movie-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
