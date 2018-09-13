@@ -1,28 +1,28 @@
 <template>
   <div class="index">
-    <!-- <indexcatch/>
+    <indexcatch/>
     <ul class="wrapper">
       <li class="item">
-        <readme/>
+        <information/>
       </li>
       <li class="sbar">
-        <links/>
+        <timeline/>
       </li>
-    </ul> -->
+    </ul>
   </div>
 </template>
 
 <script>
-// import indexcatch from './index/indexcatch'
-// import readme from './index/readme'
-// import links from './index/links'
+import indexcatch from './index/indexcatch'
+import information from './index/information'
+import timeline from './index/timeline'
 
 export default {
-  // components: {
-  //   indexcatch,
-  //   readme,
-  //   links
-  // },
+  components: {
+    indexcatch,
+    information,
+    timeline
+  },
   name: 'index',
   data () {
     return {
