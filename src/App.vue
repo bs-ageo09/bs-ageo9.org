@@ -1,23 +1,28 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <appheader/>
+    <appnav/>
     <router-view/>
+    <appcopl/>
   </div>
 </template>
 
 <script>
+import 'normalize.css'
+
+import appheader from './components/appheader'
+import appnav from './components/appnav'
+import appcopl from './components/appcopl'
+
 export default {
-  name: 'App'
+  components: {
+    appheader,
+    appnav,
+    appcopl
+  },
+  name: 'app'
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
