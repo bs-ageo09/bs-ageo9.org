@@ -9,7 +9,7 @@
 
 <script>
 import introduction from './about/introduction'
-import teamnav from './about/teamnav'
+import teamnav from './teamnav'
 import vow from './about/vow'
 import greeting from './about/greeting'
 
