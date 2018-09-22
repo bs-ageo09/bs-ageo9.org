@@ -33,7 +33,7 @@ export default {
         },
         {
           name: 'お問い合わせ',
-          url: '/contact_us'
+          url: '/contact'
         }
       ]
     }
