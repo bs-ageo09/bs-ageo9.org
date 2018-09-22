@@ -3,15 +3,21 @@
     <h2>資料</h2>
     <p>ここでは上尾9団に関する資料をご覧いただけます</p>
     <plan/>
+    <paper/>
+    <other/>
   </div>
 </template>
 
 <script>
 import plan from './docment/plan'
+import paper from './docment/paper'
+import other from './docment/other'
 
 export default {
   components: {
-    plan
+    plan,
+    paper,
+    other
   },
   name: 'docment',
   data () {

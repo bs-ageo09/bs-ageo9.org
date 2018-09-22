@@ -1,6 +1,6 @@
 <template>
-  <div id="plan">
-    <h3>年間計画書</h3>
+  <div id="other">
+    <h3>AWARD</h3>
     <div v-for="(doc, key, index) in docs" :key="index">
       <p>
         <a :href=doc.link>{{ doc.name }}</a>
@@ -12,20 +12,8 @@
 <script>
 const docs = [
   {
-    name: 'ビーバー隊',
-    link: '/static/doc/2018BVSkatsudoukeikaku.pdf'
-  },
-  {
-    name: 'カブ隊',
-    link: '/static/doc/2018CSkatsudoukeikaku.pdf'
-  },
-  {
-    name: 'ボーイ隊',
-    link: '/static/doc/2018BSkatsudoukeikaku.pdf'
-  },
-  {
-    name: 'ベンチャー隊',
-    link: '/static/doc/2018VSkatsudoukeikaku.pdf'
+    name: 'ベンチャー隊増田隊員研究発表「窒素酸化物その諸対象に及ぼす影響と実地測定結果」<',
+    link: '/static/doc/chisso.PDF'
   }
 ]
 
@@ -40,40 +28,40 @@ export default {
 </script>
 
 <style>
-#plan h2{
+#other h2{
   font-size: 30px;
   border-left: 5px solid #006400;
   padding: 5px;
 }
 
-#plan h3{
+#other h3{
   border-bottom: 1px solid #006400;
   margin-left: 5px;
   padding-left: 5px;
   width: 60vw;
 }
 
-#plan h4{
+#other h4{
   background-color: red;
 }
 
-#plan p{
+#other p{
   margin-left: 20px;
   margin-right: 10vw;
 }
 
-#plan h4{
+#other h4{
   margin-left: 20px;
 }
 
-#plan a:link{
+#other a:link{
   color: #008000;
 }
-#plan a:visited{
+#other a:visited{
   color: #556b2f;
 }
 
-#plan ul li{
+#other ul li{
   list-style-type: none;
 }
 </style>
