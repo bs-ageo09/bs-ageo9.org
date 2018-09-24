@@ -1,7 +1,16 @@
 <template>
   <div id="timeline">
+    <div id="fb-root"></div>
     <h2>Facebook</h2>
-    <a>timline設置予定</a>
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FbsAgeoTroop9%2F&tabs=timeline&width=350&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=226189591572624"
+      width="350"
+      height="800"
+      style="border:none;overflow:hidden"
+      scrolling="no"
+      frameborder="0"
+      allowTransparency="true"
+      allow="encrypted-media">
+    </iframe>
   </div>
 </template>
 
@@ -20,32 +29,5 @@ export default {
   font-size: 30px;
   border-left: 5px solid #006400;
   padding: 5px;
-}
-
-#timeline h3{
-  border-bottom: 1px solid #006400;
-  margin-left: 5px;
-  padding-left: 5px;
-  width: 60vw;
-}
-
-#timeline h4{
-  background-color: red;
-}
-
-#timeline p{
-  margin-left: 20px;
-  margin-right: 10vw;
-}
-
-#timeline h4{
-  margin-left: 20px;
-}
-
-a:link{
-  color: #008000;
-}
-a:visited{
-  color: #556b2f;
 }
 </style>
