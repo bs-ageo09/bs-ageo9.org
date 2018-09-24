@@ -73,18 +73,18 @@ a:visited{
 
 /* 埋め込みyotubeの幅をレスポンシブに */
 div.iframeWrapper {
-position: relative;
-width: 75%;
-padding-top: 530%;
-margin-left: auto;
-margin-right: auto;
+  position: relative;
+  width: 75%;
+  padding-top: 530%;
+  margin-left: auto;
+  margin-right: auto;
 }
 div.iframeWrapper iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .movie-wrap {
