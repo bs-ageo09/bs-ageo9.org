@@ -1,16 +1,16 @@
 <template>
   <div id="information">
     <h2>隊員募集のご案内</h2>
-        <!-- <h3>活動体験のお知らせ</h3>
+      <h3>活動体験のお知らせ</h3>
       <h4>ボーイスカウトたいけんイベント開催します！</h4>
-      <p>２０１８年４月２２日（日）１０時～１２時</p>
+      <p>２０１８年１０月１４日（日）１０時～１２時</p>
       <ul>
         <li>場所：こどもの城前公園</li>
         <li>ボーイスカウトの活動を体験しませんか。</li>
         <li>保護者向け説明会も開催します。</li>
         <li>対象年齢：幼稚園年長～小学２年生（他学年も可）</li>
       </ul>
-      <p><a href="/doc/taiken20180422.pdf">こちら</a>からたいけんイベントのチラシをご覧になれます。</p> -->
+      <p><a href="/doc/taiken20180422.pdf">こちら</a>からたいけんイベントのチラシをご覧になれます。</p>
     <h3>募集案内</h3>
     <p><a href="/static/doc/Scoutbosyuu.pdf">こちら</a>からスカウト募集チラシをご覧になれます</p>
     <h3>ボーイスカウト日本連盟 PR動画</h3>
@@ -51,10 +51,6 @@ export default {
   width: 60vw;
 }
 
-#information h4{
-  background-color: red;
-}
-
 #information p{
   margin-left: 20px;
   margin-right: 10vw;
@@ -62,6 +58,10 @@ export default {
 
 #information h4{
   margin-left: 20px;
+}
+
+#information ul li{
+  list-style-type: none;
 }
 
 a:link{

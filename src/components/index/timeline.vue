@@ -1,6 +1,5 @@
 <template>
   <div id="timeline">
-    <div id="fb-root"></div>
     <h2>Facebook</h2>
     <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FbsAgeoTroop9%2F&tabs=timeline&width=350&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=226189591572624"
       width="350"

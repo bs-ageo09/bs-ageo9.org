@@ -7,6 +7,7 @@
       </li>
       <li class="sbar">
         <timeline/>
+        <announcement/>
       </li>
     </ul>
   </div>
@@ -16,12 +17,14 @@
 import indexcatch from './index/indexcatch'
 import information from './index/information'
 import timeline from './index/timeline'
+import announcement from './index/announcement'
 
 export default {
   components: {
     indexcatch,
     information,
-    timeline
+    timeline,
+    announcement
   },
   name: 'index',
   data () {
