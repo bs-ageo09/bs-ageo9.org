@@ -2,30 +2,30 @@
   <div id="teamnav">
     <div class="boxmas">
       <div class="upbox">
-      <a href="../bes.html">
+      <a href="/about/vbs">
         <div class="besbox">
           ビーバースカウト
         </div>
       </a>
-      <a href="../bs.html">
+      <a href="/about/bs">
         <div class="bsbox">
           ボーイスカウト
         </div>
       </a>
       </div>
       <div class="downbox">
-      <a href="../cs.html">
+      <a href="/about/cs">
         <div class="csbox">
           カブスカウト
         </div>
       </a>
-      <a href="../vs.html">
+      <a href="/about/Vs">
          <div class="vsbox">
           ベンチャースカウト
         </div>
       </a>
       </div>
-      <a href="../ls.html">
+      <a href="/about/Rs">
         <div class="rsbox">
           ローバースカウト
         </div>
