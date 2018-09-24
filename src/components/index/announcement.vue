@@ -1,8 +1,10 @@
 <template>
   <div id="announcement">
-    <h2>イベント告知</h2>
+    <h2>イベント報告</h2>
     <div class="pdf">
-      <pdf src="./static/doc/17th_jamboree.pdf"></pdf>
+      <a href="/static/doc/17th_jamboree.pdf">
+        <pdf src="/static/doc/17th_jamboree.pdf"></pdf>
+      </a>
     </div>
   </div>
 </template>
@@ -30,6 +32,6 @@ export default {
 }
 
 .pdf{
-  width: 350px;
+  width: 300px;
 }
 </style>
