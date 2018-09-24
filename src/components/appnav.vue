@@ -17,7 +17,7 @@ export default {
       links: [
         {
           name: 'ホーム',
-          url: '/'
+          url: '/#/'
         },
         {
           name: 'ボーイスカウトとは',
