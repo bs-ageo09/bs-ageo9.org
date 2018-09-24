@@ -21,19 +21,19 @@ export default {
         },
         {
           name: 'ボーイスカウトとは',
-          url: '/about'
+          url: '/#/about'
         },
         {
           name: '活動報告',
-          url: '/report'
+          url: '/#/report'
         },
         {
           name: '資料',
-          url: '/docment'
+          url: '/#/docment'
         },
         {
           name: 'お問い合わせ',
-          url: '/contact'
+          url: '/#/contact'
         }
       ]
     }
