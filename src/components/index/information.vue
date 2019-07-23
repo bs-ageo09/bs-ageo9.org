@@ -48,11 +48,11 @@
 
 <script>
 export default {
-  name: "information",
-  data() {
-    return {};
+  name: 'information',
+  data () {
+    return {}
   }
-};
+}
 </script>
 
 <style>
