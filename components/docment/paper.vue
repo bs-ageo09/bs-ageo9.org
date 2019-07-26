@@ -13,11 +13,11 @@
 const papers = [
   {
     name: '平成23年 3月 1号',
-    link: '/doc/tankobu1.pdff'
+    link: '/doc/tankobu1.pdf'
   },
   {
     name: '平成23年 6月 2号',
-    link: '/doc/tankobu2.pd'
+    link: '/doc/tankobu2.pdf'
   },
   {
     name: '平成23年11月 3号',
