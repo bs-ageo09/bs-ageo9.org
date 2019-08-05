@@ -24,21 +24,11 @@
 </template>
 
 <script>
-const rows = [
-  {
-    rank: '団委員長',
-    name: '上山',
-    name_hira: 'うえやま',
-    number: '080-1026-2967',
-    type: '携帯'
-  }
-]
-
 export default {
   name: 'address',
   data () {
     return {
-      rows: rows
+      rows: this.$parent.targets
     }
   }
 }

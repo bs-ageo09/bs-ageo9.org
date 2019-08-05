@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.5.4",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.0.0",
     "vue-pdf": "^4.0.7"
