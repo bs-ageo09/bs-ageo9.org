@@ -1,18 +1,21 @@
 <template>
   <div id="information">
-    <h2>隊員募集のご案内</h2>
-    <!-- <h3>活動体験のお知らせ</h3>
-    <h4>ボーイスカウトたいけんイベント開催します！</h4>
-    <p>２０１８年１０月１４日（日）１０時～１２時</p>
-    <ul>
-      <li>場所：こどもの城前公園</li>
-      <li>ボーイスカウトの活動を体験しませんか。</li>
-      <li>保護者向け説明会も開催します。</li>
-      <li>対象年齢：幼稚園年長～小学２年生（他学年も可）</li>
-    </ul>
-    <p>
-      <a href="/doc/taiken20181014.pdf">こちら</a>からたいけんイベントのチラシをご覧になれます。
-    </p>-->
+    <h2>ご案内</h2>
+    <div v-for="event in events" :key='event'>
+      <div v-if="event.is_information == 'TRUE'">
+        <h3>{{ event.event_name }}のお知らせ</h3>
+        <h4>{{ event.heading }}</h4>
+        <p>{{ event.date }}</p>
+        <ul>
+          <li v-for="text in event.text.split('\n')" :key='text'>
+            {{ text }}
+          </li>
+        </ul>
+        <p v-if="event.doc_link">
+          <a :href="event.doc_link">こちら</a>から{{ event.doc_name }}をご覧になれます。
+        </p>
+      </div>
+    </div>
     <h3>募集案内</h3>
     <p>
       <a href="/doc/Scoutbosyuu.pdf">こちら</a>からスカウト募集チラシをご覧になれます
@@ -50,7 +53,12 @@
 export default {
   name: 'information',
   data () {
-    return {}
+    return {
+      events: this.$parent.events,
+      // is_exist: this.$parent.events.filter(item => {
+      //   return item.is_information == "TRUE"
+      // }).length !== 0
+    }
   }
 }
 </script>

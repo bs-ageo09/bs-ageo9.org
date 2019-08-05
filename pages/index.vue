@@ -3,7 +3,7 @@
     <indexcatch/>
     <ul class="wrapper">
       <li class="item">
-        <information/>
+        <information :events="events"/>
       </li>
       <li class="sbar">
         <timeline/>
@@ -18,6 +18,7 @@ import indexcatch from '@/components/index/indexcatch'
 import information from '@/components/index/information'
 import timeline from '@/components/index/timeline'
 import announcement from '@/components/index/announcement'
+import axios from 'axios'
 
 export default {
   components: {
@@ -29,6 +30,13 @@ export default {
   name: 'index',
   data () {
     return {
+      events: []
+    }
+  },
+  async asyncData({ app }) {
+    const response = await axios.get('https://sheetdb.io/api/v1/q36cbrq9l9mna')
+    return {
+      events: response.data
     }
   }
 }
