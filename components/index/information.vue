@@ -50,17 +50,28 @@
 </template>
 
 <script>
+import axios from 'axios'
+
+const getData = async () => {
+  const response = await axios.get('https://sheetdb.io/api/v1/q36cbrq9l9mna')
+  return response.data
+}
+
 export default {
   name: 'information',
   data () {
     return {
-      events: this.$parent.events,
+      events: [],
       // is_exist: this.$parent.events.filter(item => {
       //   return item.is_information == "TRUE"
       // }).length !== 0
     }
-  }
+  },
+  async created() {
+    this.events = await getData()
+  },
 }
+
 </script>
 
 <style>

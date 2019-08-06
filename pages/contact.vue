@@ -5,7 +5,7 @@
     <p>「ボーイスカウトってなにをするの？」「どんな活動をしているの？」など入隊する前に活動を体験していただくことができます。</p>
     <p>体験入隊は随時受付しております。下記の入力フォームに記入して送信していただくか、問合せ電話番号までご連絡ください。たくさんのお子様の参加をお待ちしております。</p>
     <h2>お問い合わせ</h2>
-    <target :targets="targets"/>
+    <target/>
     <gform/>
   </div>
 </template>
@@ -13,7 +13,6 @@
 <script>
 import target from '@/components/contact/target'
 import gform from '@/components/contact/gform'
-import axios from 'axios'
 
 export default {
   components: {
@@ -27,9 +26,7 @@ export default {
     }
   },
   async asyncData({ app }) {
-    const response = await axios.get('https://sheetdb.io/api/v1/9guvbp9nwa82m')
     return {
-      targets: response.data
     }
   }
 }
