@@ -24,13 +24,23 @@
 </template>
 
 <script>
+import axios from 'axios'
+
+const getData = async () => {
+  const response = await axios.get('https://sheetdb.io/api/v1/9guvbp9nwa82m')
+  return response.data
+}
+
 export default {
   name: 'address',
   data () {
     return {
-      rows: this.$parent.targets
+      rows: []
     }
-  }
+  },
+  async created() {
+    this.rows = await getData()
+  },
 }
 </script>
 
