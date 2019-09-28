@@ -44,7 +44,7 @@
     <h3>お問い合わせ</h3>
     <p>
       お問い合わせは
-      <a href="contact_us/">こちら</a>から
+      <a href="contact/">こちら</a>から
     </p>
   </div>
 </template>
