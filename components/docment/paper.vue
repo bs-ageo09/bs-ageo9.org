@@ -84,8 +84,20 @@ const papers = [
     link: '/doc/scouttayori18.pdf'
   },
   {
-    name: '平成30年3月 19号',
+    name: '平成30年 3月 19号',
     link: '/doc/scouttayori19.pdf'
+  },
+  {
+    name: '平成30年10月 20号',
+    link: '/doc/scouttayori20.pdf'
+  },
+  {
+    name: '平成31年 4月 21号',
+    link: '/doc/scouttayori21.pdf'
+  },
+  {
+    name: '令和元年10月 22号',
+    link: '/doc/scouttayori22.pdf'
   }
 ]
 
