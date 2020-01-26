@@ -10,104 +10,24 @@
 </template>
 
 <script>
-const papers = [
-  {
-    name: '平成23年 3月 1号',
-    link: '/doc/tankobu1.pdf'
-  },
-  {
-    name: '平成23年 6月 2号',
-    link: '/doc/tankobu2.pdf'
-  },
-  {
-    name: '平成23年11月 3号',
-    link: '/doc/tankobu3.pdf'
-  },
-  {
-    name: '平成24年 2月 4号',
-    link: '/doc/scouttayori4.pdf'
-  },
-  {
-    name: '平成24年 7月 5号',
-    link: '/doc/scouttayori5.pdf'
-  },
-  {
-    name: '平成24年11月 6号',
-    link: '/doc/scouttayori6.pdf'
-  },
-  {
-    name: '平成25年 3月 7号',
-    link: '/doc/scouttayori7.pdf'
-  },
-  {
-    name: '平成25年 7月 8号',
-    link: '/doc/scouttayori8.pdf'
-  },
-  {
-    name: '平成25年10月 9号号',
-    link: '/doc/scouttayori9.pdf'
-  },
-  {
-    name: '平成26年 3月 10号',
-    link: '/doc/scouttayori10.pdf'
-  },
-  {
-    name: '平成26年 7月 11号',
-    link: '/doc/scouttayori11.pdf'
-  },
-  {
-    name: '平成26年11月 12号',
-    link: '/doc/scouttayori12.pdf'
-  },
-  {
-    name: '平成27年 3月 13号',
-    link: '/doc/scouttayori13.pdf'
-  },
-  {
-    name: '平成27年10月 14号',
-    link: '/doc/scouttayori14.pdf'
-  },
-  {
-    name: '平成28年 3月 15号',
-    link: '/doc/scouttayori15.pdf'
-  },
-  {
-    name: '平成28年10月 16号',
-    link: '/doc/scouttayori16.pdf'
-  },
-  {
-    name: '平成29年 3月 17号',
-    link: '/doc/scouttayori17.pdf'
-  },
-  {
-    name: '平成29年10月 18号',
-    link: '/doc/scouttayori18.pdf'
-  },
-  {
-    name: '平成30年 3月 19号',
-    link: '/doc/scouttayori19.pdf'
-  },
-  {
-    name: '平成30年10月 20号',
-    link: '/doc/scouttayori20.pdf'
-  },
-  {
-    name: '平成31年 4月 21号',
-    link: '/doc/scouttayori21.pdf'
-  },
-  {
-    name: '令和元年10月 22号',
-    link: '/doc/scouttayori22.pdf'
-  }
-]
+import axios from 'axios'
+
+const getData = async () => {
+  const response = await axios
+    .get('https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec?type=paper')
+  return response.data
+}
 
 export default {
   name: 'paper',
   data () {
     return {
-      papers: papers
+      papers: []
     }
-  }
+  },
+  async created() {
+    this.papers = await getData()
+  },
 }
 </script>
 
