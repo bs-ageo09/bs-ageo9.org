@@ -20,3 +20,8 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+# backend
+```bash
+$ npm i -g @google/clasp
+```
