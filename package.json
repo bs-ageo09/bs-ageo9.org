@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
+    "@types/google-apps-script": "^1.0.10",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.0.0",
     "vue-pdf": "^4.0.7"
