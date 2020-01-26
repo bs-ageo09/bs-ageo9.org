@@ -27,7 +27,8 @@
 import axios from 'axios'
 
 const getData = async () => {
-  const response = await axios.get('https://sheetdb.io/api/v1/9guvbp9nwa82m')
+  const response = await axios
+    .get('https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec?type=address')
   return response.data
 }
 

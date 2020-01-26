@@ -2,19 +2,17 @@
   <div id="information">
     <h2>ご案内</h2>
     <div v-for="event in events" :key='event'>
-      <div v-if="event.is_information == 'TRUE'">
-        <h3>{{ event.event_name }}のお知らせ</h3>
-        <h4>{{ event.heading }}</h4>
-        <p>{{ event.date }}</p>
-        <ul>
-          <li v-for="text in event.text.split('\n')" :key='text'>
-            {{ text }}
-          </li>
-        </ul>
-        <p v-if="event.doc_link">
-          <a :href="event.doc_link">こちら</a>から{{ event.doc_name }}をご覧になれます。
-        </p>
-      </div>
+      <h3>{{ event.event_name }}のお知らせ</h3>
+      <h4>{{ event.heading }}</h4>
+      <p>{{ event.date }}</p>
+      <ul>
+        <li v-for="text in event.text.split('\n')" :key='text'>
+         {{ text }}
+        </li>
+      </ul>
+      <p v-if="event.doc_link">
+        <a :href="event.doc_link">こちら</a>から{{ event.doc_name }}をご覧になれます。
+      </p>
     </div>
     <h3>募集案内</h3>
     <p>
@@ -53,7 +51,8 @@
 import axios from 'axios'
 
 const getData = async () => {
-  const response = await axios.get('https://sheetdb.io/api/v1/q36cbrq9l9mna')
+  const response = await axios
+    .get('https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec?type=event')
   return response.data
 }
 
@@ -62,9 +61,6 @@ export default {
   data () {
     return {
       events: [],
-      // is_exist: this.$parent.events.filter(item => {
-      //   return item.is_information == "TRUE"
-      // }).length !== 0
     }
   },
   async created() {
