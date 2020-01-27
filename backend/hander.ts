@@ -21,6 +21,9 @@ function doGet(e) {
 
     case 'paper':
       return jsonResponse(uc.collectPaper())
+
+    case 'announcement':
+      return jsonResponse(uc.getAnnouncement())
   }
 
   return jsonResponse({

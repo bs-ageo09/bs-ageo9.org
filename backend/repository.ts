@@ -26,6 +26,7 @@ export class SpreadsheetRepository {
         obj['date'],
         obj['text'],
         obj['doc_link'],
+        obj['doc_preview'],
         obj['doc_name']
       )
     })
@@ -68,5 +69,20 @@ export class SpreadsheetRepository {
         obj['name']
       )
     })
+  }
+
+  findByKey(key: string): string {
+    const sheet = SpreadsheetApp.openById(this.id).getSheetByName('other')
+    const rows = sheet.getDataRange().getValues()
+
+    let val: string
+    for (const row of rows) {
+      val = row[1]
+      if (row[0] === key) {
+        break
+      }
+    }
+
+    return val
   }
 }
