@@ -26,6 +26,7 @@ export class SpreadsheetRepository {
         obj['date'],
         obj['text'],
         obj['doc_link'],
+        obj['doc_preview'],
         obj['doc_name']
       )
     })

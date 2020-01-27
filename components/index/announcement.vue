@@ -1,11 +1,7 @@
 <template>
   <div id="announcement">
     <h2>イベント報告</h2>
-    <embed
-      :src='`${this.path}#page=1`'
-      type="application/pdf"
-      width="100%" height="450"
-    />
+    <iframe :src='`${this.path}#page=1`' height="400" frameborder="0"></iframe>
   </div>
 </template>
 

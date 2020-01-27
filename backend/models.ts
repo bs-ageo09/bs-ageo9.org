@@ -6,12 +6,13 @@ export class Events {
   date: string
   text: string
   docLink: string
+  docPreview: string
   docName: string
 
   constructor(
     index: number,
     isInformation: boolean,
-    eventName, heading, date, text, docLink, docName: string) {
+    eventName, heading, date, text, docLink, docPreview, docName: string) {
     this.index = index
     this.isInformation = isInformation
     this.eventName = eventName
@@ -19,6 +20,7 @@ export class Events {
     this.date = date
     this.text = text
     this.docLink = docLink
+    this.docPreview = docPreview
     this.docName = docName
   }
 
@@ -30,6 +32,7 @@ export class Events {
       date: this.date,
       text: this.text,
       doc_link: this.docLink,
+      doc_preview: this.docPreview,
       doc_name: this.docName,
     }
   }
