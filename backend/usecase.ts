@@ -29,7 +29,7 @@ export class DataUsecase {
   getAnnouncement() {
     const repo = new SpreadsheetRepository(sheetID)
     return {
-      url: repo.findByKey('announcement_pdf')
+      url: repo.findOthersValueByKey('announcement_pdf')
     }
   }
 }

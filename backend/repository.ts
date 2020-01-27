@@ -14,7 +14,7 @@ export class SpreadsheetRepository {
 
     return rows.map(row => {
       let obj = {}
-      row.map((item, index) => {
+      row.forEach((item, index) => {
         obj[keys[index]] = item
       })
       Logger.log(obj)
@@ -39,7 +39,7 @@ export class SpreadsheetRepository {
 
     return rows.map(row => {
       let obj = {}
-      row.map((item, index) => {
+      row.forEach((item, index) => {
         obj[keys[index]] = item
       })
       Logger.log(obj)
@@ -60,7 +60,7 @@ export class SpreadsheetRepository {
 
     return rows.map(row => {
       let obj = {}
-      row.map((item, index) => {
+      row.forEach((item, index) => {
         obj[keys[index]] = item
       })
       Logger.log(obj)
@@ -71,7 +71,7 @@ export class SpreadsheetRepository {
     })
   }
 
-  findByKey(key: string): string {
+  findOthersValueByKey(key: string): string {
     const sheet = SpreadsheetApp.openById(this.id).getSheetByName('other')
     const rows = sheet.getDataRange().getValues()
 
