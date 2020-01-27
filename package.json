@@ -11,13 +11,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.5.4",
+    "@nuxtjs/axios": "^5.9.3",
     "@types/google-apps-script": "^1.0.10",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.11.0",
     "vue-pdf": "^4.0.7"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^2.0.2"
   }
 }
