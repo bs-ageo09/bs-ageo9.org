@@ -25,4 +25,11 @@ export class DataUsecase {
     const repo = new SpreadsheetRepository(sheetID)
     return repo.findPaperList()
   }
+
+  getAnnouncement() {
+    const repo = new SpreadsheetRepository(sheetID)
+    return {
+      url: repo.findByKey('announcement_pdf')
+    }
+  }
 }

@@ -22,6 +22,16 @@ $ yarn generate
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
 
 # backend
+
+endpoint
+> https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec
+
 ```bash
+# installation deployment tool
 $ npm i -g @google/clasp
+$ clasp login
+
+# upload and deployment
+$ clasp push
+$ clasp open
 ```
