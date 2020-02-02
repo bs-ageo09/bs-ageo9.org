@@ -11,8 +11,11 @@ export class DataUsecase {
     const repo = new SpreadsheetRepository(sheetID)
 
     return repo.findEventsList()
-      .filter(event => {
-        return event.isInformation
+      .filter(item => {
+        return item.isInformation
+      })
+      .sort(item => {
+        return item.index
       })
   }
 
@@ -24,6 +27,12 @@ export class DataUsecase {
   collectPaper(): Paper[] {
     const repo = new SpreadsheetRepository(sheetID)
     return repo.findPaperList()
+      .filter(item => {
+        return item.isValid
+      })
+      .sort(item => {
+        return item.index
+      })
   }
 
   getAnnouncement() {
