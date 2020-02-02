@@ -35,10 +35,10 @@ export class DataUsecase {
       })
   }
 
-  getAnnouncement() {
+  getOtherVal(key: string) {
     const repo = new SpreadsheetRepository(sheetID)
     return {
-      url: repo.findOthersValueByKey('announcement_pdf')
+      val: repo.findOthersValueByKey(key)
     }
   }
 }
