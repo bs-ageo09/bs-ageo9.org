@@ -14,8 +14,8 @@ export class DataUsecase {
       .filter(item => {
         return item.isInformation
       })
-      .sort(item => {
-        return item.index
+      .sort((a, b) => {
+        return (a.index - b.index)
       })
   }
 
@@ -30,8 +30,8 @@ export class DataUsecase {
       .filter(item => {
         return item.isValid
       })
-      .sort(item => {
-        return item.index
+      .sort((a, b) => {
+        return (a.index - b.index)
       })
   }
 
