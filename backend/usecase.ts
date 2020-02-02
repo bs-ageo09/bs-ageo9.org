@@ -11,8 +11,11 @@ export class DataUsecase {
     const repo = new SpreadsheetRepository(sheetID)
 
     return repo.findEventsList()
-      .filter(event => {
-        return event.isInformation
+      .filter(item => {
+        return item.isInformation
+      })
+      .sort((a, b) => {
+        return (a.index - b.index)
       })
   }
 
@@ -24,12 +27,18 @@ export class DataUsecase {
   collectPaper(): Paper[] {
     const repo = new SpreadsheetRepository(sheetID)
     return repo.findPaperList()
+      .filter(item => {
+        return item.isValid
+      })
+      .sort((a, b) => {
+        return (a.index - b.index)
+      })
   }
 
-  getAnnouncement() {
+  getOtherVal(key: string) {
     const repo = new SpreadsheetRepository(sheetID)
     return {
-      url: repo.findOthersValueByKey('announcement_pdf')
+      val: repo.findOthersValueByKey(key)
     }
   }
 }

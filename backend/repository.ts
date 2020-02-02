@@ -65,6 +65,8 @@ export class SpreadsheetRepository {
       })
       Logger.log(obj)
       return new Paper(
+        obj['index'],
+        obj['is_valid'],
         obj['link'],
         obj['name']
       )

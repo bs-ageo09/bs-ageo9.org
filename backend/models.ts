@@ -26,7 +26,6 @@ export class Events {
 
   toJSON() {
     return {
-      index: this.index,
       event_name: this.eventName,
       heading: this.heading,
       date: this.date,
@@ -66,10 +65,14 @@ export class Address {
 }
 
 export class Paper {
+  index: number
+  isValid: boolean
   link: string
   name: string
 
-  constructor(link, name: string) {
+  constructor(index: number, isValid: boolean, link, name: string) {
+    this.index = index
+    this.isValid = isValid
     this.link = link
     this.name = name
   }
