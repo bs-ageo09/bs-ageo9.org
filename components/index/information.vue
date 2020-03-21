@@ -19,7 +19,7 @@
     </div>
     <h3>募集案内</h3>
     <p>
-      <a href="/doc/Scoutbosyuu.pdf">こちら</a>からスカウト募集チラシをご覧になれます
+      <a :href="recruitment_pdf">こちら</a>からスカウト募集チラシをご覧になれます
     </p>
     <h3>ボーイスカウト日本連盟 PR動画</h3>
     <p class="movie-wrap">
@@ -53,10 +53,12 @@
 <script>
 import axios from 'axios'
 
-const getData = async () => {
+const getData = async (type, key) => {
+  const param = key !== '' ? `type=${type}` : `type=${type}&key=${key}`
   const response = await axios
-    .get('https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec?type=event')
-  return response.data
+    .get(`https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec?${param}`)
+
+  return key !== '' ? response.data : response.data
 }
 
 export default {
@@ -64,10 +66,13 @@ export default {
   data () {
     return {
       events: [],
+      recruitment_pdf: '',
     }
   },
   async created() {
-    this.events = await getData()
+    this.events = await getData('event', '')
+    const recruitment_pdf = await getData('other', 'recruitment_pdf')
+    this.recruitment_pdf = recruitment_pdf['val']
   },
 }
 
