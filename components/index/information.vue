@@ -66,7 +66,7 @@ export default {
   data () {
     return {
       events: [],
-      recruitment_pdf: '',
+      recruitment_pdf: null,
     }
   },
   async created() {
