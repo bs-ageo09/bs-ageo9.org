@@ -56,7 +56,7 @@ import axios from 'axios'
 const getData = async (type, key) => {
   const param = key !== '' ? `type=${type}` : `type=${type}&key=${key}`
   const response = await axios
-    .get(`https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec?${param}`)
+    .get(`https://script.google.com/macros/s/AKfycbzt5cm3IOA3I-zQw_7hHB1OGmeSSL8x20tG8UjOUTDNiCh0EhrS/exec?${param}`)
 
   return key !== '' ? response.data : response.data
 }

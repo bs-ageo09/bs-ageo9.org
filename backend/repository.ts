@@ -1,15 +1,13 @@
 import { Events, Address, Paper } from './models'
 
 export class SpreadsheetRepository {
-  id: string
-
-  constructor(id: string) {
-    this.id = id
-  }
-
   findEventsList(): Events[] {
-    const sheet = SpreadsheetApp.openById(this.id).getSheetByName('event')
-    const rows = sheet.getDataRange().getValues()
+    const sheet =  SpreadsheetApp
+      .getActiveSpreadsheet()
+      .getSheetByName('event')
+      const rows = sheet
+      .getDataRange()
+      .getValues()
     const keys = rows.splice(0, 1)[0]
 
     return rows.map(row => {
@@ -33,8 +31,12 @@ export class SpreadsheetRepository {
   }
 
   findAddressList(): Address[] {
-    const sheet = SpreadsheetApp.openById(this.id).getSheetByName('address')
-    const rows = sheet.getDataRange().getValues()
+    const sheet =  SpreadsheetApp
+      .getActiveSpreadsheet()
+      .getSheetByName('address')
+      const rows = sheet
+      .getDataRange()
+      .getValues()
     const keys = rows.splice(0, 1)[0]
 
     return rows.map(row => {
@@ -54,8 +56,12 @@ export class SpreadsheetRepository {
   }
 
   findPaperList(): Paper[] {
-    const sheet = SpreadsheetApp.openById(this.id).getSheetByName('paper')
-    const rows = sheet.getDataRange().getValues()
+    const sheet =  SpreadsheetApp
+      .getActiveSpreadsheet()
+      .getSheetByName('paper')
+      const rows = sheet
+      .getDataRange()
+      .getValues()
     const keys = rows.splice(0, 1)[0]
 
     return rows.map(row => {
@@ -74,8 +80,12 @@ export class SpreadsheetRepository {
   }
 
   findOthersValueByKey(key: string): string {
-    const sheet = SpreadsheetApp.openById(this.id).getSheetByName('other')
-    const rows = sheet.getDataRange().getValues()
+    const sheet =  SpreadsheetApp
+      .getActiveSpreadsheet()
+      .getSheetByName('other')
+    const rows = sheet
+      .getDataRange()
+      .getValues()
 
     let val: string
     for (const row of rows) {

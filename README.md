@@ -24,7 +24,7 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 # backend
 
 endpoint
-> https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec
+> https://script.google.com/macros/s/AKfycbzt5cm3IOA3I-zQw_7hHB1OGmeSSL8x20tG8UjOUTDNiCh0EhrS/exec
 
 ```bash
 # installation deployment tool
