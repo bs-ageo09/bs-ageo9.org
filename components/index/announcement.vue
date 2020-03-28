@@ -10,7 +10,7 @@ import axios from 'axios'
 
 const getData = async () => {
   const response = await axios
-    .get('https://script.google.com/macros/s/AKfycby6SnkWMU4vuvC_hyVRdldHGe8q6fCfVNXkNlQy4hXVnPlaSwA/exec?type=other&key=announcement_pdf')
+    .get('https://script.google.com/macros/s/AKfycbzt5cm3IOA3I-zQw_7hHB1OGmeSSL8x20tG8UjOUTDNiCh0EhrS/exec?type=other&key=announcement_pdf')
   return response.data['val']
 }
 

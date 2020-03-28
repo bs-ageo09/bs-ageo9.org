@@ -1,14 +1,12 @@
 import { Events, Address, Paper } from './models'
 import { SpreadsheetRepository } from './repository'
 
-const sheetID = PropertiesService.getScriptProperties().getProperty('SHEET_ID');
-
 export class DataUsecase {
   constructor() {
   }
 
   collectEvents(): Events[] {
-    const repo = new SpreadsheetRepository(sheetID)
+    const repo = new SpreadsheetRepository()
 
     return repo.findEventsList()
       .filter(item => {
@@ -20,12 +18,12 @@ export class DataUsecase {
   }
 
   collectAddress(): Address[] {
-    const repo = new SpreadsheetRepository(sheetID)
+    const repo = new SpreadsheetRepository()
     return repo.findAddressList()
   }
 
   collectPaper(): Paper[] {
-    const repo = new SpreadsheetRepository(sheetID)
+    const repo = new SpreadsheetRepository()
     return repo.findPaperList()
       .filter(item => {
         return item.isValid
@@ -36,7 +34,7 @@ export class DataUsecase {
   }
 
   getOtherVal(key: string) {
-    const repo = new SpreadsheetRepository(sheetID)
+    const repo = new SpreadsheetRepository()
     return {
       val: repo.findOthersValueByKey(key)
     }
