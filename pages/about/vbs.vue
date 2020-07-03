@@ -12,18 +12,31 @@
       </p>
     </div>
     <h3>資料</h3>
-    <p><a href="/doc/2018BVSkatsudoukeikaku.pdf">年間計画書</a></p>
+    <p><a :href='this.path'>年間計画書</a></p>
     <p>活動報告</p>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import axios from 'axios'
+
+const getData = async () => {
+  const response = await axios
+    .get(`${Vue.prototype.$constants.backendApi}?type=other&key=plan_vbs`)
+  return response.data['val']
+}
+
 export default {
   name: 'vbs',
   data () {
     return {
+      path: '',
     }
-  }
+  },
+  async created() {
+    this.path = await getData()
+  },
 }
 </script>
 

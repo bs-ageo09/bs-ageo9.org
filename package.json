@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@babel/helper-compilation-targets": "^7.10.4",
     "@nuxtjs/axios": "^5.9.3",
     "@types/google-apps-script": "^1.0.10",
     "normalize.css": "^8.0.1",

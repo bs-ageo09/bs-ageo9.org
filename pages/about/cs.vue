@@ -12,18 +12,31 @@
       </p>
     </div>
     <h3>資料</h3>
-    <p><a href="/doc/2018CSkatsudoukeikaku.pdf">年間計画書</a></p>
+    <p><a :href='this.path'>年間計画書</a></p>
     <p><a href="http://bs-ageo9cs.seesaa.net/">ブログ</a></p>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import axios from 'axios'
+
+const getData = async () => {
+  const response = await axios
+    .get(`${Vue.prototype.$constants.backendApi}?type=other&key=plan_cs`)
+  return response.data['val']
+}
+
 export default {
   name: 'cs',
   data () {
     return {
+      path: '',
     }
-  }
+  },
+  async created() {
+    this.path = await getData()
+  },
 }
 </script>
 
