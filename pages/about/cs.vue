@@ -12,18 +12,30 @@
       </p>
     </div>
     <h3>資料</h3>
-    <p><a href="/doc/2018CSkatsudoukeikaku.pdf">年間計画書</a></p>
+    <p><a :href='this.path'>年間計画書</a></p>
     <p><a href="http://bs-ageo9cs.seesaa.net/">ブログ</a></p>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
+const getData = async () => {
+  const response = await axios
+    .get('https://script.google.com/macros/s/AKfycbzt5cm3IOA3I-zQw_7hHB1OGmeSSL8x20tG8UjOUTDNiCh0EhrS/exec?type=other&key=plan_cs')
+  return response.data['val']
+}
+
 export default {
   name: 'cs',
   data () {
     return {
+      path: '',
     }
-  }
+  },
+  async created() {
+    this.path = await getData()
+  },
 }
 </script>
 

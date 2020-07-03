@@ -12,18 +12,30 @@
       </p>
     </div>
     <h3>資料</h3>
-    <p><a href="/doc/2018BVSkatsudoukeikaku.pdf">年間計画書</a></p>
+    <p><a :href='this.path'>年間計画書</a></p>
     <p>活動報告</p>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
+const getData = async () => {
+  const response = await axios
+    .get('https://script.google.com/macros/s/AKfycbzt5cm3IOA3I-zQw_7hHB1OGmeSSL8x20tG8UjOUTDNiCh0EhrS/exec?type=other&key=plan_vbs')
+  return response.data['val']
+}
+
 export default {
   name: 'vbs',
   data () {
     return {
+      path: '',
     }
-  }
+  },
+  async created() {
+    this.path = await getData()
+  },
 }
 </script>
 
