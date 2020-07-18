@@ -55,9 +55,8 @@ import Vue from 'vue'
 import axios from 'axios'
 
 const getData = async (type, key) => {
-  const param = key !== '' ? `type=${type}` : `type=${type}&key=${key}`
   const response = await axios
-    .get(`${Vue.prototype.$constants.backendApi}?${param}`)
+    .get(`${Vue.prototype.$constants.backendApi}?type=${type}&key=${key}`)
 
   return key !== '' ? response.data : response.data
 }
@@ -73,6 +72,7 @@ export default {
   async created() {
     this.events = await getData('event', '')
     const recruitment_pdf = await getData('other', 'recruitment_pdf')
+    console.log(`recruitment_pdf['val']: ${recruitment_pdf['val']}`);
     this.recruitment_pdf = recruitment_pdf['val']
   },
 }
