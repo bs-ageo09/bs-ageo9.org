@@ -10,32 +10,51 @@
 </template>
 
 <script>
-const docs = [
-  {
-    name: 'ビーバー隊',
-    link: '/doc/2018BVSkatsudoukeikaku.pdf'
-  },
-  {
-    name: 'カブ隊',
-    link: '/doc/2018CSkatsudoukeikaku.pdf'
-  },
-  {
-    name: 'ボーイ隊',
-    link: '/doc/2018BSkatsudoukeikaku.pdf'
-  },
-  {
-    name: 'ベンチャー隊',
-    link: '/doc/2018VSkatsudoukeikaku.pdf'
-  }
-]
+import Vue from 'vue'
+import axios from 'axios'
+
+const getData = async (key) => {
+  const response = await axios
+    .get(`${Vue.prototype.$constants.backendApi}?type=other&key=${key}`)
+  return response.data['val']
+}
 
 export default {
   name: 'plan',
   data () {
     return {
-      docs: docs
+      docs: []
     }
-  }
+  },
+  async created() {
+    const request = [
+      getData('plan_vbs'),
+      getData('plan_cs'),
+      getData('plan_bs'),
+      getData('plan_vs'),
+   ]
+
+    const response = await Promise.all(request)
+
+    this.docs = [
+      {
+        name: 'ビーバー隊',
+        link: response[0]
+      },
+      {
+        name: 'カブ隊',
+        link: response[1]
+      },
+      {
+        name: 'ボーイ隊',
+        link: response[2]
+      },
+      {
+        name: 'ベンチャー隊',
+        link: response[3]
+      }
+    ]
+  },
 }
 </script>
 
