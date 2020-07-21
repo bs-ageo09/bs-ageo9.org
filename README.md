@@ -2,7 +2,7 @@
 website of 9th Ageo Group, Saitama Scout Council, SAJ
 
 ## frontend
-nuxt.js(generate static page)
+netlify + nuxt.js(generate static page)
 
 ``` bash
 # install dependencies
