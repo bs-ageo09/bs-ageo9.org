@@ -72,7 +72,6 @@ export default {
   async created() {
     this.events = await getData('event', '')
     const recruitment_pdf = await getData('other', 'recruitment_pdf')
-    console.log(`recruitment_pdf['val']: ${recruitment_pdf['val']}`);
     this.recruitment_pdf = recruitment_pdf['val']
   },
 }

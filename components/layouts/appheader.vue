@@ -1,7 +1,7 @@
 <template>
   <div id="appheader">
     <h1>ボーイスカウト上尾9団</h1>
-    <h2>Boy Scout 9th Ageo Group</h2>
+    <h2>9th Ageo Group, Saitama Scout Council, SAJ</h2>
     <p>このホームページは、設置者（上山芳範：ボーイスカウト埼玉県連盟上尾9団）＜ueyama362@gmail.com＞の責任の下で掲載するものであり、</p>
     <p>ボーイスカウト日本連盟が情報を提供しているものではありません。</p>
   </div>
