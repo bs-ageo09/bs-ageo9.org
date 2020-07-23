@@ -34,6 +34,11 @@ export class DataUsecase {
   }
 
   getOtherVal(key: string) {
+    if (!key) {
+      return {
+        val: null
+      }
+    }
     const repo = new SpreadsheetRepository()
     return {
       val: repo.findOthersValueByKey(key)
