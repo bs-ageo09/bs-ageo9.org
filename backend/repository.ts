@@ -59,7 +59,7 @@ export class SpreadsheetRepository {
     const sheet =  SpreadsheetApp
       .getActiveSpreadsheet()
       .getSheetByName('paper')
-      const rows = sheet
+    const rows = sheet
       .getDataRange()
       .getValues()
     const keys = rows.splice(0, 1)[0]
