@@ -2,10 +2,9 @@ import { Events, Address, Paper } from './models'
 
 export class SpreadsheetRepository {
   findEventsList(): Events[] {
-    const sheet =  SpreadsheetApp
+    const rows =  SpreadsheetApp
       .getActiveSpreadsheet()
       .getSheetByName('event')
-      const rows = sheet
       .getDataRange()
       .getValues()
     const keys = rows.splice(0, 1)[0]
@@ -31,10 +30,9 @@ export class SpreadsheetRepository {
   }
 
   findAddressList(): Address[] {
-    const sheet =  SpreadsheetApp
+    const rows =  SpreadsheetApp
       .getActiveSpreadsheet()
       .getSheetByName('address')
-      const rows = sheet
       .getDataRange()
       .getValues()
     const keys = rows.splice(0, 1)[0]
@@ -56,10 +54,9 @@ export class SpreadsheetRepository {
   }
 
   findPaperList(): Paper[] {
-    const sheet =  SpreadsheetApp
+    const rows =  SpreadsheetApp
       .getActiveSpreadsheet()
       .getSheetByName('paper')
-    const rows = sheet
       .getDataRange()
       .getValues()
     const keys = rows.splice(0, 1)[0]
@@ -80,21 +77,18 @@ export class SpreadsheetRepository {
   }
 
   findOthersValueByKey(key: string): string {
-    const sheet =  SpreadsheetApp
+    const rows =  SpreadsheetApp
       .getActiveSpreadsheet()
       .getSheetByName('other')
-    const rows = sheet
       .getDataRange()
       .getValues()
 
-    let val: string
     for (const row of rows) {
-      val = row[1]
       if (row[0] === key) {
-        break
+        return row[1]
       }
     }
 
-    return val
+    return ""
   }
 }
