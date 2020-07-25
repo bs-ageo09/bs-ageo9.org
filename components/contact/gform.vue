@@ -1,20 +1,29 @@
 <template>
   <div id="gform">
     <h3>問い合わせフォームから</h3>
-    <p>下のフォームに必要事項を入力し送信してください。 その他問合せ欄に体験入隊希望とご記入ください。後日当団よりご連絡いたします。
+    <p>下記リンクのフォームに必要事項を入力し送信してください。 その他問合せ欄に体験入隊希望とご記入ください。後日当団よりご連絡いたします。
     </p>
-    <div class="iframe-wrap">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScWXlWmIzC3Jboeoh-DKErojJkDCf_L8nK6IckDnKhDCCJY7g/viewform?embedded=true"
-        width="760" height="530%" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...</iframe>
+    <div v-for="(link, key, index) in links" :key="index">
+      <p>
+        <a :href=link.url>{{ link.name }}</a>
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+const links = [
+  {
+    name: 'お問い合わせフォーム（Google Forms）',
+    url: 'https://forms.gle/Ym81K4bRQRNyi1A58'
+  }
+]
+
 export default {
   name: 'gform',
   data () {
     return {
+      links: links
     }
   }
 }
