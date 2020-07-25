@@ -7,17 +7,20 @@
     <h2>お問い合わせ</h2>
     <target/>
     <gform/>
+    <other/>
   </div>
 </template>
 
 <script>
 import target from '@/components/contact/target'
 import gform from '@/components/contact/gform'
+import other from '@/components/contact/other'
 
 export default {
   components: {
     target,
-    gform
+    gform,
+    other
   },
   name: 'contact',
   data () {
