@@ -30,6 +30,12 @@ export default {
 </script>
 
 <style>
+#gform h2{
+  font-size: 30px;
+  border-left: 5px solid #006400;
+  padding: 5px;
+}
+
 #gform h3{
   border-bottom: 1px solid #006400;
   margin-left: 5px;
@@ -37,23 +43,27 @@ export default {
   width: 60vw;
 }
 
+#gform h4{
+  background-color: red;
+}
+
 #gform p{
   margin-left: 20px;
   margin-right: 10vw;
 }
 
-.iframe-wrap {
-  position: relative;
-  width: 100%;
-  padding-top: 120%;
-  margin-left: auto;
-  margin-right: auto;
+#gform h4{
+  margin-left: 20px;
 }
-.iframe-wrap iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+
+#gform a:link{
+  color: #008000;
+}
+#gform a:visited{
+  color: #556b2f;
+}
+
+#gform ul li{
+  list-style-type: none;
 }
 </style>
