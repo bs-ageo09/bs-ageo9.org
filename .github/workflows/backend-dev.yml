@@ -2,7 +2,7 @@ name: clasp
 
 env:
   CLASPRC_JSON: ${{ secrets.CLASPRC_JSON }}
-  DEPLOYMENT: ${{ secrets.PROD_DEPLOYMENT }}
+  DEPLOYMENT: ${{ secrets.DEV_DEPLOYMENT }}
 
 on:
   push:
