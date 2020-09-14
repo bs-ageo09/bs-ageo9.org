@@ -9,7 +9,7 @@ on:
     branches: [ develop ]
 
 jobs:
-  deploy:
+  deploy-clasp:
     name: deploy
     runs-on: ubuntu-latest
 
