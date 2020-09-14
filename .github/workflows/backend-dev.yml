@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy:
-    name: deploy-backend
+    name: deploy-clasp
     runs-on: ubuntu-latest
 
     steps:
