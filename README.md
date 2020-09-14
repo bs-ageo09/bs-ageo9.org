@@ -1,5 +1,5 @@
-# bs-ageo9.org 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4090ca41-82c6-4dd4-87ca-84dacadcda77/deploy-status)](https://app.netlify.com/sites/prod-bsageo09/deploys)
+# bs-ageo9.org
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4090ca41-82c6-4dd4-87ca-84dacadcda77/deploy-status)](https://app.netlify.com/sites/prod-bsageo09/deploys) ![clasp](https://github.com/bs-ageo09/bs-ageo9.org/workflows/clasp/badge.svg)
 
 website of 9th Ageo Group, Saitama Scout Council, SAJ
 
