@@ -9,8 +9,8 @@ on:
     branches: [ master ]
 
 jobs:
-  deploy-clasp:
-    name: deploy
+  deploy:
+    name: deploy-backend
     runs-on: ubuntu-latest
 
     steps:
