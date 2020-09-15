@@ -27,6 +27,6 @@ function doGet(e) {
   }
 
   return jsonResponse({
-    msg: 'resource not found'
+    msg: 'resource not found...'
   })
 }
