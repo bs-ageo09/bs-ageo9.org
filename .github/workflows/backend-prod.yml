@@ -31,7 +31,7 @@ jobs:
 
     - name: sed script id
       run: |
-        sed -i s/1q6ZgFFw6IuFWV9bHVJKsxGR1snJTXK01-AzwBOuOot-SknB2cLB4SYBU/${CLASPRC_JSON}/ .clasp.json
+      sed -i -e "s/1q6ZgFFw6IuFWV9bHVJKsxGR1snJTXK01-AzwBOuOot-SknB2cLB4SYBU/$SCRIPT_ID/" ./.clasp.json
 
     - name: push
       run: clasp push --force
