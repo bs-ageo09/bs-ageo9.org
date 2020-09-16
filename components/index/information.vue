@@ -56,7 +56,7 @@ import axios from 'axios'
 
 const getData = async (type, key) => {
   const response = await axios
-    .get(`${Vue.prototype.$constants.backendApi}?type=${type}&key=${key}`)
+    .get(`${process.env.backendApi}?type=${type}&key=${key}`)
 
   return key !== '' ? response.data : response.data
 }

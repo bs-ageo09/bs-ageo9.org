@@ -11,7 +11,7 @@ import axios from 'axios'
 
 const getData = async () => {
   const response = await axios
-    .get(`${Vue.prototype.$constants.backendApi}?type=other&key=announcement_pdf`)
+    .get(`${process.env.backendApi}?type=other&key=announcement_pdf`)
   return response.data['val']
 }
 
