@@ -3,6 +3,7 @@ name: clasp
 env:
   CLASPRC_JSON: ${{ secrets.CLASPRC_JSON }}
   DEPLOYMENT: ${{ secrets.DEV_DEPLOYMENT }}
+  SCRIPT_ID: ${{ secrets.DEV_SCRIPT_ID }}
 
 on:
   push:
@@ -27,6 +28,10 @@ jobs:
     - name: setup clasprc
       run: |
         echo ${CLASPRC_JSON} > ~/.clasprc.json
+
+    - name: sed script id
+      run: |
+        sed -i -e "s/1q6ZgFFw6IuFWV9bHVJKsxGR1snJTXK01-AzwBOuOot-SknB2cLB4SYBU/$SCRIPT_ID/" ./.clasp.json
 
     - name: push
       run: clasp push --force

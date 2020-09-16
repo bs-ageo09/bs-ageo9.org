@@ -1,3 +1,4 @@
+const envSet = require(`./env.${process.env.NODE_ENV || 'prod'}.js`)
 
 export default {
   mode: 'universal',
@@ -39,6 +40,7 @@ export default {
   /*
   ** Build configuration
   */
+  env: envSet,
   build: {
     /*
     ** You can extend webpack config here

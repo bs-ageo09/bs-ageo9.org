@@ -5,15 +5,16 @@
   "author": "limit7412",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "cross-env NODE_ENV=\"dev\" nuxt",
+    "build": "cross-env NODE_ENV=\"prod\" nuxt build",
+    "start": "cross-env NODE_ENV=\"prod\" nuxt start",
+    "generate": "cross-env NODE_ENV=\"prod\" nuxt generate"
   },
   "dependencies": {
     "@babel/helper-compilation-targets": "^7.10.4",
     "@nuxtjs/axios": "^5.9.3",
     "@types/google-apps-script": "^1.0.10",
+    "cross-env": "^7.0.2",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.11.0",
     "vue-pdf": "^4.0.7"

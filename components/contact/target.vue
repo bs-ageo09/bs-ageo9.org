@@ -29,7 +29,7 @@ import axios from 'axios'
 
 const getData = async () => {
   const response = await axios
-    .get(`${Vue.prototype.$constants.backendApi}?type=address`)
+    .get(`${process.env.backendApi}?type=address`)
   return response.data
 }
 
