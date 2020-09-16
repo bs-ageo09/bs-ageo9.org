@@ -21,7 +21,7 @@ $ yarn generate
 google app script + typescript + clasp
 
 frontend configuration
-> ./plugins/constants.js
+> ./env.xxx.js
 
 ```bash
 # installation deployment tool
