@@ -40,6 +40,9 @@ export default {
   /*
   ** Build configuration
   */
+  buildModules: [
+    '@nuxtjs/google-analytics'
+  ],
   env: envSet,
   build: {
     /*
