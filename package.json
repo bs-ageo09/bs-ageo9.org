@@ -20,6 +20,7 @@
     "vue-pdf": "^4.0.7"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.4.0",
     "nodemon": "^2.0.2"
   }
 }

@@ -40,6 +40,17 @@ export default {
   /*
   ** Build configuration
   */
+  buildModules: [
+    '@nuxtjs/google-analytics'
+  ],
+  googleAnalytics: {
+    id: 'G-0W1GKS615G', // Use as fallback if no runtime config is provided
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: 'G-0W1GKS615G'
+    }
+  },
   env: envSet,
   build: {
     /*
