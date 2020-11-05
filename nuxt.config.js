@@ -44,11 +44,11 @@ export default {
     '@nuxtjs/google-analytics'
   ],
   googleAnalytics: {
-    id: 'G-0W1GKS615G', // Use as fallback if no runtime config is provided
+    id: 'UA-121406993-2'
   },
   publicRuntimeConfig: {
     googleAnalytics: {
-      id: 'G-0W1GKS615G'
+      id: 'UA-121406993-2'
     }
   },
   env: envSet,
