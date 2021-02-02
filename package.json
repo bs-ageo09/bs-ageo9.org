@@ -11,16 +11,16 @@
     "generate": "cross-env NODE_ENV=\"prod\" nuxt generate"
   },
   "dependencies": {
-    "@babel/helper-compilation-targets": "^7.10.4",
-    "@nuxtjs/axios": "^5.9.3",
-    "@types/google-apps-script": "^1.0.10",
-    "cross-env": "^7.0.2",
+    "@babel/helper-compilation-targets": "^7.12.5",
+    "@nuxtjs/axios": "^5.13.0",
+    "@types/google-apps-script": "^1.0.22",
+    "cross-env": "^7.0.3",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.11.0",
-    "vue-pdf": "^4.0.7"
+    "nuxt": "^2.14.12",
+    "vue-pdf": "^4.2.0"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.7"
   }
 }
