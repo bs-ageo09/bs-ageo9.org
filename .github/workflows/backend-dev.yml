@@ -7,7 +7,10 @@ env:
 
 on:
   push:
-    branches: [ develop ]
+    branches-ignore:
+      - 'master'
+    tags:
+      - '*'
 
 jobs:
   deploy:
