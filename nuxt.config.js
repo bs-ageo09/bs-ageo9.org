@@ -2,6 +2,7 @@ const envSet = require(`./env.${process.env.NODE_ENV || 'prod'}.js`)
 
 export default {
   mode: 'universal',
+  target: 'static',
   /*
   ** Headers of the page
   */
