@@ -5,12 +5,7 @@ env:
   DEPLOYMENT: ${{ secrets.DEV_DEPLOYMENT }}
   SCRIPT_ID: ${{ secrets.DEV_SCRIPT_ID }}
 
-on:
-  push:
-    branches-ignore:
-      - 'master'
-    tags:
-      - '*'
+on: pull_request
 
 jobs:
   deploy:
