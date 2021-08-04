@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v1
 
     - name: setup node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
 
     - name: install clasp
       run: npm i @google/clasp -g
