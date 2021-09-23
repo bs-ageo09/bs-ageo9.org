@@ -1,3 +1,3 @@
 module.exports = {
-  backendApi: 'https://script.google.com/macros/s/AKfycbzEtpspJnGiQGzBL8Iw2U1sUXN1HE4qcO8502rwgWMsN5kaflE/exec'
+  backendApi: 'https://script.google.com/macros/s/AKfycbzUzlGSQqKmk4CvzUiM4-FHpmd0r9G651hhrtFS33IiOgswr6A1_ydX81g7Frkf53Ml/exec'
 }
