@@ -6,9 +6,7 @@
     <p>また、自分のためだけでなく、奉仕の精神を持ち、人のために役に立つことの大切さを学びます。</p>
     <div class="center">
       <img src="~/assets/img/BS_201708_summersCamp.jpg">
-      <p>
-        BSトップ_2017年8月：夏キャンプ.jpg
-      </p>
+      <p>夏キャンプ</p>
     </div>
     <h3>資料</h3>
     <p><a :href='this.path'>年間計画書</a></p>

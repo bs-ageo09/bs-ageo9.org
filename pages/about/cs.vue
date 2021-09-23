@@ -8,8 +8,7 @@
     </p>
     <div class="center">
       <img src="~/assets/img/CS_201708_summerCamp.jpg">
-      <p>CSトップ_2017年8月：夏キャンプ
-      </p>
+      <p>夏キャンプ</p>
     </div>
     <h3>資料</h3>
     <p><a :href='this.path'>年間計画書</a></p>
