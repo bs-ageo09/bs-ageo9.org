@@ -14,4 +14,7 @@
   ],
   // Prettier の ESLint 連携
   "prettier.eslintIntegration": true,
+  "files.watcherExclude": {
+    "**/target": true
+  },
 }

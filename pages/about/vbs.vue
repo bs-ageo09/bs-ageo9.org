@@ -8,8 +8,7 @@
     </p>
     <div class="center">
       <img src="~/assets/img/BVS_2017_river.jpg">
-      <p>2017年夏：川遊び
-      </p>
+      <p>川遊び</p>
     </div>
     <h3>資料</h3>
     <p><a :href='this.path'>年間計画書</a></p>
