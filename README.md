@@ -28,7 +28,7 @@ frontend configuration
 $ npm i -g @google/clasp
 $ clasp login
 
-# upload and deployment
+# upload and deployment (rewriting of .clasp.json is required for execution)
 $ clasp push
 $ clasp open
 ```
