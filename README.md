@@ -8,13 +8,13 @@ cloudflare pages + nuxt.js(generate static page)
 
 ``` bash
 # install dependencies
-$ yarn install
+$ npm i
 
 # serve with hot reload at localhost:3000
-$ yarn dev
+$ npm run dev
 
 # generate static project
-$ yarn generate
+$ npm run generate
 ```
 
 ## backend
