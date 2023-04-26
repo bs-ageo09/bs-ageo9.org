@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=\"development\" nuxi dev",
     "build": "cross-env NODE_ENV=\"production\" nuxi build",
     "start": "cross-env NODE_ENV=\"production\" nuxi start",
-    "generate": "cross-env NODE_ENV=\"production\" nuxt generate"
+    "generate": "cross-env NODE_ENV=\"production\" NITRO_PRESET=cloudflare_pages nuxt generate"
   },
   "dependencies": {
     "@babel/helper-compilation-targets": "^7.20.7",
