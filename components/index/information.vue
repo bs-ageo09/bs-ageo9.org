@@ -50,32 +50,20 @@
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
-import axios from 'axios'
+<script setup>
+const runtimeConfig = useRuntimeConfig()
 
 const getData = async (type, key) => {
-  const response = await axios
-    .get(`${process.env.backendApi}?type=${type}&key=${key}`)
-
-  return key !== '' ? response.data : response.data
+  const response = await fetch(`${runtimeConfig.public.backendApi}?type=${type}&key=${key}`, {
+    method: "GET",
+  })
+  return await response.json()
 }
 
-export default {
-  name: 'information',
-  data () {
-    return {
-      events: [],
-      recruitment_pdf: null,
-    }
-  },
-  async created() {
-    this.events = await getData('event', '')
-    const recruitment_pdf = await getData('other', 'recruitment_pdf')
-    this.recruitment_pdf = recruitment_pdf['val']
-  },
-}
-
+let events = []
+events = await getData('event', '')
+const recruitment_pdf_res = await getData('other', 'recruitment_pdf')
+const recruitment_pdf = recruitment_pdf_res['val']
 </script>
 
 <style>

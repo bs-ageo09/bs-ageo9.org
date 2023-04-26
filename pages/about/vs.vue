@@ -7,32 +7,22 @@
       <p>栗駒山山頂</p>
     </div>
     <h3>資料</h3>
-    <p><a :href='this.path'>年間計画書</a></p>
+    <p><a :href='path'>年間計画書</a></p>
     <p>活動報告</p>
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
-import axios from 'axios'
-
+<script setup>
+const runtimeConfig = useRuntimeConfig()
 const getData = async () => {
-  const response = await axios
-    .get(`${process.env.backendApi}?type=other&key=plan_vs`)
-  return response.data['val']
+  const response = await fetch(`${runtimeConfig.public.backendApi}?type=other&key=plan_vs`, {
+    method: "GET",
+  })
+  const json = await response.json()
+  return json['val']
 }
 
-export default {
-  name: 'vs',
-  data () {
-    return {
-      path: '',
-    }
-  },
-  async created() {
-    this.path = await getData()
-  },
-}
+const path = await getData()
 </script>
 
 <style>

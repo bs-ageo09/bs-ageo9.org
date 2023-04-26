@@ -9,27 +9,17 @@
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
-import axios from 'axios'
-
+<script setup>
+const runtimeConfig = useRuntimeConfig()
 const getData = async () => {
-  const response = await axios
-    .get(`${process.env.backendApi}?type=paper`)
-  return response.data
+  const response = await fetch(`${runtimeConfig.public.backendApi}?type=paper`, {
+    method: "GET",
+  })
+  return await response.json()
 }
 
-export default {
-  name: 'paper',
-  data () {
-    return {
-      papers: []
-    }
-  },
-  async created() {
-    this.papers = await getData()
-  },
-}
+let papers = []
+papers = await getData()
 </script>
 
 <style>

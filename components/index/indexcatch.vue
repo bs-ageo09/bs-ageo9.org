@@ -23,7 +23,7 @@ body{
 
 #indexcatch{
   text-align: right;
-  background: url('~assets/img/catch.jpg') no-repeat left 5vw top;
+  background: url('~/assets/img/catch.jpg') no-repeat left 5vw top;
   background-size: contain;
   background-color: #4f5030;
   padding: 5vw 3vw 10vw;

@@ -1,6 +1,7 @@
-const envSet = require(`./env.${process.env.NODE_ENV || 'prod'}.js`)
 
-export default {
+const envSet = require(`./env.${process.env.NODE_ENV || 'production'}.js`)
+
+export default defineNuxtConfig({
   mode: 'universal',
   target: 'static',
   /*
@@ -30,29 +31,20 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/constants',
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios'
   ],
   /*
   ** Build configuration
   */
   buildModules: [
-    '@nuxtjs/google-analytics'
   ],
-  googleAnalytics: {
-    id: 'UA-121406993-2'
+  runtimeConfig: {
+    public: envSet,
   },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: 'UA-121406993-2'
-    }
-  },
-  env: envSet,
   build: {
     /*
     ** You can extend webpack config here
@@ -60,4 +52,4 @@ export default {
     extend(config, ctx) {
     }
   }
-}
+})
