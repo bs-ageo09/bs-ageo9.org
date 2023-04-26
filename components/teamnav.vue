@@ -74,7 +74,7 @@ export default {
   padding-bottom: 1vw;
   width: 37vw;
   background-color: #0be8ef;
-  background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0, 0, 0,1)), url('~assets/img/hed.jpg') center center;
+  background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0, 0, 0,1)), url('~/assets/img/hed.jpg') center center;
   background-size:cover;
   margin-bottom: 0.7vw;
 }
@@ -84,8 +84,8 @@ export default {
   padding-bottom: 1vw;
   width: 37vw;
   background-color: #efeb0b;
-  background: url('~assets/img/hed.jpg') center center;
-  background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0, 0, 0,1)), url('~assets/img/hed.jpg') center center;
+  background: url('~/assets/img/hed.jpg') center center;
+  background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0, 0, 0,1)), url('~/assets/img/hed.jpg') center center;
   background-size:cover;
   margin-bottom: 0.7vw;
 }
@@ -95,8 +95,8 @@ export default {
   padding-bottom: 1vw;
   width: 37vw;
   background-color: #2e47d3;
-  background: url('~assets/img/hed.jpg') center center;
-  background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0, 0, 0,1)), url('~assets/img/hed.jpg') center center;
+  background: url('~/assets/img/hed.jpg') center center;
+  background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0, 0, 0,1)), url('~/assets/img/hed.jpg') center center;
   background-size:cover;
   margin-bottom: 0.7vw;
 }
@@ -106,8 +106,8 @@ export default {
   padding-bottom: 1vw;
   width: 37vw;
   background-color: #ef9115;
-  background: url('~assets/img/hed.jpg') center center;
-  background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0, 0, 0,1)), url('~assets/img/hed.jpg') center center;
+  background: url('~/assets/img/hed.jpg') center center;
+  background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0, 0, 0,1)), url('~/assets/img/hed.jpg') center center;
   background-size:cover;
   margin-bottom: 0.7vw;
 }

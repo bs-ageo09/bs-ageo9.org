@@ -11,32 +11,22 @@
       <p>夏キャンプ</p>
     </div>
     <h3>資料</h3>
-    <p><a :href='this.path'>年間計画書</a></p>
+    <p><a :href='path'>年間計画書</a></p>
     <p><a href="http://bs-ageo9cs.seesaa.net/">ブログ</a></p>
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
-import axios from 'axios'
-
+<script setup>
+const runtimeConfig = useRuntimeConfig()
 const getData = async () => {
-  const response = await axios
-    .get(`${process.env.backendApi}?type=other&key=plan_cs`)
-  return response.data['val']
+  const response = await fetch(`${runtimeConfig.public.backendApi}?type=other&key=plan_cs`, {
+    method: "GET",
+  })
+  const json = await response.json()
+  return json['val']
 }
 
-export default {
-  name: 'cs',
-  data () {
-    return {
-      path: '',
-    }
-  },
-  async created() {
-    this.path = await getData()
-  },
-}
+const path = await getData()
 </script>
 
 <style>
