@@ -5,10 +5,10 @@
   "author": "limit7412",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=\"development\" nuxi dev",
-    "build": "cross-env NODE_ENV=\"production\" nuxi build",
-    "start": "cross-env NODE_ENV=\"production\" nuxi start",
-    "generate": "cross-env NODE_ENV=\"production\" NITRO_PRESET=cloudflare_pages nuxt generate"
+    "dev": "cross-env NODE_ENV=\"development\" npx nuxi dev",
+    "build": "cross-env NODE_ENV=\"production\" npx nuxi build",
+    "start": "cross-env NODE_ENV=\"production\" npx nuxi start",
+    "generate": "cross-env NODE_ENV=\"production\" NITRO_PRESET=cloudflare_pages npx nuxi generate"
   },
   "dependencies": {
     "@babel/helper-compilation-targets": "^7.20.7",
