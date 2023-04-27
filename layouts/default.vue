@@ -2,7 +2,7 @@
   <div id="app">
     <appheader/>
     <appnav/>
-    <nuxt />
+    <slot/>
     <appcopl/>
   </div>
 </template>

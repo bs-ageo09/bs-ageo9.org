@@ -9,53 +9,43 @@
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
-import axios from 'axios'
-
+<script setup>
+const runtimeConfig = useRuntimeConfig()
 const getData = async (key) => {
-  const response = await axios
-    .get(`${process.env.backendApi}?type=other&key=${key}`)
-  return response.data['val']
+  const response = await fetch(`${runtimeConfig.public.backendApi}?type=other&key=${key}`, {
+    method: "GET",
+  })
+  const json = await response.json()
+  return json['val']
 }
 
-export default {
-  name: 'plan',
-  data () {
-    return {
-      docs: []
-    }
-  },
-  async created() {
-    const request = [
-      getData('plan_vbs'),
-      getData('plan_cs'),
-      getData('plan_bs'),
-      getData('plan_vs'),
-   ]
+let docs = []
+const request = [
+  getData('plan_vbs'),
+  getData('plan_cs'),
+  getData('plan_bs'),
+  getData('plan_vs'),
+]
 
-    const response = await Promise.all(request)
-
-    this.docs = [
-      {
-        name: 'ビーバー隊',
-        link: response[0]
-      },
-      {
-        name: 'カブ隊',
-        link: response[1]
-      },
-      {
-        name: 'ボーイ隊',
-        link: response[2]
-      },
-      {
-        name: 'ベンチャー隊',
-        link: response[3]
-      }
-    ]
+const response = await Promise.all(request)
+docs = [
+  {
+    name: 'ビーバー隊',
+    link: response[0]
   },
-}
+  {
+    name: 'カブ隊',
+    link: response[1]
+  },
+  {
+    name: 'ボーイ隊',
+    link: response[2]
+  },
+  {
+    name: 'ベンチャー隊',
+    link: response[3]
+  }
+]
 </script>
 
 <style>
