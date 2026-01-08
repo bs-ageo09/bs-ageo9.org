@@ -15,8 +15,7 @@
     "@types/google-apps-script": "^1.0.57",
     "consola": "^3.0.2",
     "cross-env": "^7.0.3",
-    "normalize.css": "^8.0.1",
-    "vue-pdf": "^4.3.0"
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",
