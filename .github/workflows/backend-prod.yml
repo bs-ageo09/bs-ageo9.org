@@ -17,6 +17,8 @@ jobs:
   deploy:
     name: deploy-clasp
     runs-on: ubuntu-latest
+    # dependabot起因の実行はsecretsを参照できずデプロイも不要なため除外する
+    if: github.actor != 'dependabot[bot]'
 
     steps:
 
