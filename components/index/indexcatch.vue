@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'indexcatch',
+  name: 'Indexcatch',
   data () {
     return {
     }

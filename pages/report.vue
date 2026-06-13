@@ -8,10 +8,10 @@
 import teamnav from '@/components/teamnav'
 
 export default {
+  name: 'Report',
   components: {
     teamnav
   },
-  name: 'report',
   data () {
     return {
     }

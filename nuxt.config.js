@@ -36,6 +36,7 @@ export default defineNuxtConfig({
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxt/eslint',
   ],
   /*
   ** Build configuration
@@ -45,11 +46,4 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: envSet,
   },
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
-  }
 })

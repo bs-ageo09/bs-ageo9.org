@@ -20,13 +20,13 @@ import timeline from '@/components/index/timeline'
 import announcement from '@/components/index/announcement'
 
 export default {
+  name: 'Index',
   components: {
     indexcatch,
     information,
     timeline,
     announcement
   },
-  name: 'index',
   data () {
     return {
     }

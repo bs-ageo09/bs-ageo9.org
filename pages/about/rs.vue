@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'rs',
+  name: 'Rs',
   data () {
     return {
     }

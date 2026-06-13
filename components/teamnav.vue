@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: 'teamnav',
+  name: 'Teamnav',
   data () {
     return {
     }

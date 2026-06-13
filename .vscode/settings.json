@@ -1,20 +1,20 @@
 {
-  // デフォルトのコード整形を無効化
-  "editor.formatOnSave": false,
-  // ESLint 自動フォーマット有効化
-  "eslint.autoFixOnSave": true,
-  // ESLint の Vue.js 設定
+  // 保存時に Prettier で整形する
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 保存時に ESLint の自動修正を適用する
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // ESLint の対象言語
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    {
-      "language": "vue",
-      "autoFix": true
-    }
+    "typescript",
+    "vue"
   ],
-  // Prettier の ESLint 連携
-  "prettier.eslintIntegration": true,
   "files.watcherExclude": {
-    "**/target": true
-  },
+    "**/.nuxt": true,
+    "**/.output": true
+  }
 }

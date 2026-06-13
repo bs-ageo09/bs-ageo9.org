@@ -17,12 +17,12 @@ import appnav from '@/components/layouts/appnav'
 import appcopl from '@/components/layouts/appcopl'
 
 export default {
+  name: 'App',
   components: {
     appheader,
     appnav,
     appcopl
-  },
-  name: 'app'
+  }
 }
 </script>
 

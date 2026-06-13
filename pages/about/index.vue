@@ -14,13 +14,13 @@ import vow from '@/components/about/vow'
 import greeting from '@/components/about/greeting'
 
 export default {
+  name: 'About',
   components: {
     introduction,
     teamnav,
     vow,
     greeting
   },
-  name: 'about',
   data () {
     return {
     }

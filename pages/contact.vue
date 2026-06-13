@@ -17,19 +17,19 @@ import gform from '@/components/contact/gform'
 import other from '@/components/contact/other'
 
 export default {
+  name: 'Contact',
   components: {
     target,
     gform,
     other
   },
-  name: 'contact',
+  async asyncData() {
+    return {
+    }
+  },
   data () {
     return {
       targets: []
-    }
-  },
-  async asyncData({ app }) {
-    return {
     }
   }
 }

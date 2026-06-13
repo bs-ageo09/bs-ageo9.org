@@ -14,12 +14,12 @@ import paper from '@/components/docment/paper'
 import other from '@/components/docment/other'
 
 export default {
+  name: 'Docment',
   components: {
     plan,
     paper,
     other
   },
-  name: 'docment',
   data () {
     return {
     }
