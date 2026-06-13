@@ -5,7 +5,12 @@ env:
   DEPLOYMENT: ${{ secrets.DEV_DEPLOYMENT }}
   SCRIPT_ID: ${{ secrets.DEV_SCRIPT_ID }}
 
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - 'backend/**'
+      - '.clasp.json'
+      - '.github/workflows/backend-dev.yml'
 
 jobs:
   deploy:

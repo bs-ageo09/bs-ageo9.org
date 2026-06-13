@@ -8,6 +8,10 @@ env:
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'backend/**'
+      - '.clasp.json'
+      - '.github/workflows/backend-prod.yml'
 
 jobs:
   deploy:
