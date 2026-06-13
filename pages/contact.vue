@@ -23,10 +23,6 @@ export default {
     gform,
     other
   },
-  async asyncData() {
-    return {
-    }
-  },
   data () {
     return {
       targets: []

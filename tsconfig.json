@@ -2,14 +2,6 @@
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
   // backend(GAS)は clasp による別管理のため frontend の typecheck から除外する
-  // （Phase 4 で backend 専用の型チェックを別途整備する）。
-  // 併せて Nuxt 生成 tsconfig の exclude をルート基準に引き継ぐ。
-  "exclude": [
-    "backend",
-    "dist",
-    ".data",
-    ".output",
-    "node_modules/runtime/server",
-    "node_modules/dist/runtime/server"
-  ]
+  // （Phase 4 で backend 専用の型チェックを別途整備する）
+  "exclude": ["backend"]
 }
