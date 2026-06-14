@@ -28,6 +28,10 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 502, statusMessage: `failed to reach backend: ${String(e)}` })
   }
 
+  if (!upstream.ok) {
+    throw createError({ statusCode: upstream.status, statusMessage: `backend returned ${upstream.status}` })
+  }
+
   const body = await upstream.text()
   setResponseHeaders(event, {
     'content-type': 'application/json; charset=utf-8',
