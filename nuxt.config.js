@@ -71,4 +71,30 @@ export default defineNuxtConfig({
       backendApi: loadBackendApi(),
     },
   },
+  /*
+  ** 全ページをビルド時にプリレンダリングする。
+  ** バックエンド(GAS)へのアクセスをビルド時（サーバー側）に行うことで、
+  ** ブラウザから GAS を直接 fetch することによる CORS 失敗を回避する。
+  ** 取得結果は useAsyncData のペイロードに載るためクライアントでの再取得も発生しない。
+  */
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/about',
+        '/about/bs',
+        '/about/cs',
+        '/about/vs',
+        '/about/vbs',
+        '/about/rs',
+        '/report',
+        '/docment',
+        '/contact',
+      ],
+    },
+  },
+  experimental: {
+    payloadExtraction: true,
+  },
 })
