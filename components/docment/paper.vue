@@ -1,7 +1,7 @@
 <template>
   <div id="paper">
     <h3>機関紙「スカウトだより」</h3>
-    <div v-for="paper in papers" :key="paper.link">
+    <div v-for="(paper, index) in papers" :key="index">
       <p>
         <a :href=paper.link>{{ paper.name }}</a>
       </p>

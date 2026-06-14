@@ -1,7 +1,7 @@
 <template>
   <div id="plan">
     <h3>年間計画書</h3>
-    <div v-for="doc in docs" :key="doc.link">
+    <div v-for="doc in docs" :key="doc.name">
       <p>
         <a :href=doc.link>{{ doc.name }}</a>
       </p>
