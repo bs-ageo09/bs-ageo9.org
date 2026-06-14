@@ -54,16 +54,21 @@
 const runtimeConfig = useRuntimeConfig()
 
 const getData = async (type, key) => {
-  const response = await fetch(`${runtimeConfig.public.backendApi}?type=${type}&key=${key}`, {
-    method: "GET",
-  })
-  return await response.json()
+  const base = runtimeConfig.public.backendApi
+  if (!base) return null
+  try {
+    const response = await fetch(`${base}?type=${type}&key=${key}`)
+    if (!response.ok) return null
+    return await response.json()
+  } catch {
+    return null
+  }
 }
 
-let events = []
-events = await getData('event', '')
-const recruitment_pdf_res = await getData('other', 'recruitment_pdf')
-const recruitment_pdf = recruitment_pdf_res['val']
+const eventsData = await getData('event', '')
+const events = Array.isArray(eventsData) ? eventsData : []
+const recruitmentPdfRes = await getData('other', 'recruitment_pdf')
+const recruitment_pdf = recruitmentPdfRes?.val ?? ''
 </script>
 
 <style>
