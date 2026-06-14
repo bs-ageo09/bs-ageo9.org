@@ -1,0 +1,25 @@
+name: backend-dev-skip
+
+# backend-dev.yml は paths フィルタで「backend に関連する PR」のときだけ起動する。
+# しかし deploy-clasp を required status check にしている場合、backend に関連しない
+# PR では backend-dev.yml 自体が起動せず、チェックが報告されないため
+# "Expected — Waiting for status to be reported" のまま永久に詰まってしまう。
+#
+# そこで backend-dev.yml と逆の paths-ignore で起動し、同名ジョブ deploy-clasp を
+# 即座に成功として報告するダミーを用意することで、非 backend な PR でも
+# required check を満たせるようにする（GitHub 公式が推奨する skip パターン）。
+on:
+  pull_request:
+    paths-ignore:
+      - 'backend/**'
+      - '.clasp.json'
+      - '.github/workflows/backend-dev.yml'
+
+jobs:
+  deploy:
+    name: deploy-clasp
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: skip (no backend changes)
+      run: echo "backend に関連しない変更のため clasp デプロイをスキップします。"
