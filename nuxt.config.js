@@ -40,6 +40,10 @@ function loadBackendApi() {
 }
 
 export default defineNuxtConfig({
+  // SPA（クライアントサイドレンダリング）。データ取得は実行時に同一オリジンの
+  // プロキシ(/api/backend)経由で行うため、スプレッドシート更新が即時反映され、
+  // かつブラウザから GAS を直接叩かないため CORS も発生しない。
+  ssr: false,
   /*
   ** Headers of the page
   */
@@ -64,37 +68,15 @@ export default defineNuxtConfig({
   ],
   /*
   ** Runtime config
-  ** public.backendApi は環境変数 NUXT_PUBLIC_BACKEND_API で上書き可能
+  ** - gasApi: サーバー(プロキシ)からのみ参照する実際の GAS エンドポイント
+  ** - public.backendApi: クライアントは同一オリジンのプロキシ経由でアクセスする
+  **   （ブラウザから GAS を直接叩かないことで CORS を回避しつつ、
+  **    取得はリクエスト時に行うためスプレッドシート更新が即時反映される）
   */
   runtimeConfig: {
+    gasApi: loadBackendApi(),
     public: {
-      backendApi: loadBackendApi(),
+      backendApi: '/api/backend',
     },
-  },
-  /*
-  ** 全ページをビルド時にプリレンダリングする。
-  ** バックエンド(GAS)へのアクセスをビルド時（サーバー側）に行うことで、
-  ** ブラウザから GAS を直接 fetch することによる CORS 失敗を回避する。
-  ** 取得結果は useAsyncData のペイロードに載るためクライアントでの再取得も発生しない。
-  */
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: [
-        '/',
-        '/about',
-        '/about/bs',
-        '/about/cs',
-        '/about/vs',
-        '/about/vbs',
-        '/about/rs',
-        '/report',
-        '/docment',
-        '/contact',
-      ],
-    },
-  },
-  experimental: {
-    payloadExtraction: true,
   },
 })
