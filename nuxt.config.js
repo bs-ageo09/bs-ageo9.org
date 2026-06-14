@@ -1,5 +1,8 @@
 
-const envSet = require(`./env.${process.env.NODE_ENV || 'production'}.js`)
+// `nuxi build`/`generate` は NODE_ENV を強制的に production へ書き換えるため、
+// バックエンド切り替えには NODE_ENV ではなく APP_ENV を優先して参照する。
+const appEnv = process.env.APP_ENV || process.env.NODE_ENV || 'production'
+const envSet = require(`./env.${appEnv}.js`)
 
 export default defineNuxtConfig({
   mode: 'universal',

@@ -9,6 +9,7 @@
     "build": "cross-env NODE_ENV=\"production\" npx nuxi build",
     "start": "cross-env NODE_ENV=\"production\" npx nuxi start",
     "generate": "cross-env NODE_ENV=\"production\" NITRO_PRESET=cloudflare_pages npx nuxi generate",
+    "generate:preview": "cross-env APP_ENV=\"development\" NITRO_PRESET=cloudflare_pages npx nuxi generate",
     "postinstall": "nuxi prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
