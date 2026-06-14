@@ -28,7 +28,7 @@ jobs:
       uses: actions/setup-node@v4
 
     - name: install clasp
-      run: npm i @google/clasp -g
+      run: npm i @google/clasp@2 -g
 
     - name: setup clasprc
       run: |

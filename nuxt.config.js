@@ -19,16 +19,14 @@ function resolveAppEnv() {
 }
 
 /*
-** backendApi の解決
-** 運用側で NUXT_PUBLIC_BACKEND_API が明示指定されていれば最優先で使用し、
-** なければ判定した環境に対応する .env.<env> の BACKEND_API を読み込む。
-** ※ .env.<env> のキーは敢えて NUXT_PUBLIC_ プレフィックスを付けない。
-**   将来 Nuxt が .env.<envName> を自動読込するようになっても、Nuxt 標準の
-**   NUXT_PUBLIC_* 自動オーバーライドと衝突して resolveAppEnv() の判定が
-**   バイパスされるのを防ぐため。
+** gasApi（実バックエンドの GAS エンドポイント）の解決
+** 判定した環境に対応する .env.<env> の BACKEND_API を既定値として読み込む。
+** ランタイムでの明示オーバーライドは Nuxt 標準の NUXT_GAS_API
+**（→ runtimeConfig.gasApi）が担うため、ここでは NUXT_PUBLIC_* を参照しない。
+** （参照すると Nuxt の自動マッピングで public.backendApi が GAS URL に上書きされ、
+**   クライアントがプロキシを経由せず GAS を直接叩いて CORS になるため）
 */
-function loadBackendApi() {
-  if (process.env.NUXT_PUBLIC_BACKEND_API) return process.env.NUXT_PUBLIC_BACKEND_API
+function loadGasApi() {
   try {
     const file = resolve(process.cwd(), `.env.${resolveAppEnv()}`)
     const content = readFileSync(file, 'utf-8')
@@ -74,7 +72,7 @@ export default defineNuxtConfig({
   **    取得はリクエスト時に行うためスプレッドシート更新が即時反映される）
   */
   runtimeConfig: {
-    gasApi: loadBackendApi(),
+    gasApi: loadGasApi(),
     public: {
       backendApi: '/api/backend',
     },
