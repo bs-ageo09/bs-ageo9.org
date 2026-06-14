@@ -17,10 +17,12 @@
         <iframe class="doc" :src='`${event.doc_preview}#page=1`' height="700" width="500" frameborder="0"/>
       </p>
     </div>
-    <h3>募集案内</h3>
-    <p>
-      <a :href="recruitment_pdf">こちら</a>からスカウト募集チラシをご覧になれます
-    </p>
+    <template v-if="recruitment_pdf">
+      <h3>募集案内</h3>
+      <p>
+        <a :href="recruitment_pdf">こちら</a>からスカウト募集チラシをご覧になれます
+      </p>
+    </template>
     <h3>ボーイスカウト日本連盟 PR動画</h3>
     <p class="movie-wrap">
       <iframe
