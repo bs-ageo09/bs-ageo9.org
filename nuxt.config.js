@@ -1,3 +1,40 @@
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+
+/*
+** デプロイ環境の判定
+** Cloudflare Pages は build command を Preview/Production で分けられず、
+** さらに nuxi build/generate は NODE_ENV を production へ強制変更するため、
+** NODE_ENV だけではプレビュービルドを判別できない。
+** Cloudflare Pages が自動設定する CF_PAGES_BRANCH でデプロイ先を判定する。
+**   1. APP_ENV: 明示指定の最優先（ローカル検証用オーバーライド）
+**   2. CF_PAGES_BRANCH が本番ブランチ(master)以外 → development（プレビューデプロイ）
+**   3. それ以外（ローカル）は NODE_ENV を見て最終的に production へフォールバック
+*/
+function resolveAppEnv() {
+  if (process.env.APP_ENV) return process.env.APP_ENV
+  const cfBranch = process.env.CF_PAGES_BRANCH
+  if (cfBranch && cfBranch !== 'master') return 'development'
+  return process.env.NODE_ENV === 'development' ? 'development' : 'production'
+}
+
+/*
+** backendApi の解決
+** NUXT_PUBLIC_BACKEND_API が明示指定されていれば最優先で使用し、
+** なければ判定した環境に対応する .env.<env> から読み込む。
+*/
+function loadBackendApi() {
+  if (process.env.NUXT_PUBLIC_BACKEND_API) return process.env.NUXT_PUBLIC_BACKEND_API
+  try {
+    const file = resolve(process.cwd(), `.env.${resolveAppEnv()}`)
+    const content = readFileSync(file, 'utf-8')
+    const match = content.match(/^\s*NUXT_PUBLIC_BACKEND_API\s*=\s*(.*)\s*$/m)
+    return match ? match[1].trim().replace(/^['"]|['"]$/g, '') : ''
+  } catch {
+    return ''
+  }
+}
+
 export default defineNuxtConfig({
   /*
   ** Headers of the page
@@ -23,12 +60,11 @@ export default defineNuxtConfig({
   ],
   /*
   ** Runtime config
-  ** public.backendApi は環境変数 NUXT_PUBLIC_BACKEND_API で上書きする
-  ** （.env.development / .env.production を各 npm script の --dotenv で読み込む）
+  ** public.backendApi は環境変数 NUXT_PUBLIC_BACKEND_API で上書き可能
   */
   runtimeConfig: {
     public: {
-      backendApi: '',
+      backendApi: loadBackendApi(),
     },
   },
 })
