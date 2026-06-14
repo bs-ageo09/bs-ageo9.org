@@ -12,14 +12,18 @@
 <script setup>
 const runtimeConfig = useRuntimeConfig()
 const getData = async (key) => {
-  const response = await fetch(`${runtimeConfig.public.backendApi}?type=other&key=${key}`, {
-    method: "GET",
-  })
-  const json = await response.json()
-  return json['val']
+  const base = runtimeConfig.public.backendApi
+  if (!base) return ''
+  try {
+    const response = await fetch(`${base}?type=other&key=${key}`)
+    if (!response.ok) return ''
+    const json = await response.json()
+    return json?.val ?? ''
+  } catch {
+    return ''
+  }
 }
 
-let docs = []
 const request = [
   getData('plan_vbs'),
   getData('plan_cs'),
@@ -28,7 +32,7 @@ const request = [
 ]
 
 const response = await Promise.all(request)
-docs = [
+const docs = [
   {
     name: 'ビーバー隊',
     link: response[0]
