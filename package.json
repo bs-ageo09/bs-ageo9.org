@@ -13,6 +13,8 @@
     "postinstall": "nuxi prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "lint:app": "eslint . --ignore-pattern \"backend/**\"",
+    "lint:backend": "eslint backend",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "nuxi typecheck",
