@@ -36,3 +36,6 @@ jobs:
 
     - name: typecheck (backend)
       run: npm run typecheck:backend
+
+    - name: build (bundle for GAS)
+      run: npm run build:backend

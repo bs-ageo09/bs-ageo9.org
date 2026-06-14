@@ -29,3 +29,7 @@ function doGet(e: GoogleAppsScript.Events.DoGet) {
     msg: 'resource not found'
   })
 }
+
+// バンドル(IIFE)後も GAS から呼び出せるよう doGet をグローバルへ公開する。
+;(globalThis as unknown as { doGet: typeof doGet }).doGet = doGet
+

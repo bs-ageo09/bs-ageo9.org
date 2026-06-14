@@ -27,9 +27,18 @@ jobs:
 
     - name: setup node.js
       uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: npm
+
+    - name: install dependencies
+      run: npm ci
+
+    - name: build backend (bundle TypeScript for GAS)
+      run: npm run build:backend
 
     - name: install clasp
-      run: npm i @google/clasp@2 -g
+      run: npm i @google/clasp -g
 
     - name: setup clasprc
       run: |

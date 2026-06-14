@@ -18,7 +18,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "nuxi typecheck",
-    "typecheck:backend": "tsc -p tsconfig.backend.json"
+    "typecheck:backend": "tsc -p tsconfig.backend.json",
+    "build:backend": "node scripts/build-gas.mjs"
   },
   "dependencies": {
     "cross-env": "^10.1.0",
@@ -28,6 +29,7 @@
     "@nuxt/eslint": "^1.16.0",
     "@types/google-apps-script": "^2.0.11",
     "eslint": "^10.5.0",
+    "esbuild": "^0.28.1",
     "nuxt": "^3.21.8",
     "prettier": "^3.6.2",
     "typescript": "~6.0.3",
