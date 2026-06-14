@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'appheader',
+  name: 'Appheader',
   data () {
     return {
     }

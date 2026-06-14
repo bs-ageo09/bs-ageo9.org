@@ -14,7 +14,7 @@
         <a :href="event.doc_link">こちら</a>から{{ event.doc_name }}をご覧になれます。
       </p>
       <p v-if="event.doc_preview">
-        <iframe class="doc" :src='`${event.doc_preview}#page=1`' height="700" width="500" frameborder="0"></iframe>
+        <iframe class="doc" :src='`${event.doc_preview}#page=1`' height="700" width="500" frameborder="0"/>
       </p>
     </div>
     <h3>募集案内</h3>
@@ -30,7 +30,7 @@
         frameborder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen
-      ></iframe>
+      />
     </p>
     <p class="movie-wrap">
       <iframe
@@ -40,7 +40,7 @@
         frameborder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen
-      ></iframe>
+      />
     </p>
     <h3>お問い合わせ</h3>
     <p>

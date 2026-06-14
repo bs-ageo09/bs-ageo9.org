@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'introduction',
+  name: 'Introduction',
   data () {
     return {
     }

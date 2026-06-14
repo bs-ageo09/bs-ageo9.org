@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: 'vow',
+  name: 'Vow',
   data () {
     return {
     }

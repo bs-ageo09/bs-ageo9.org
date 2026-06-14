@@ -1,0 +1,37 @@
+name: frontend-ci
+
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - 'backend/**'
+  pull_request:
+    paths-ignore:
+      - 'backend/**'
+
+jobs:
+  ci:
+    name: lint & typecheck & build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+
+    - name: setup node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: npm
+
+    - name: install
+      run: npm ci
+
+    - name: lint
+      run: npm run lint
+
+    - name: typecheck
+      run: npm run typecheck
+
+    - name: generate
+      run: npm run generate

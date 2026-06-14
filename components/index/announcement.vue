@@ -1,7 +1,7 @@
 <template>
   <div id="announcement">
     <h2>イベント報告</h2>
-    <iframe :src='`${path}#page=1`' height="400" frameborder="0"></iframe>
+    <iframe :src='`${path}#page=1`' height="400" frameborder="0"/>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ const getData = async () => {
   return json['val']
 }
 
-let path = await getData()
+const path = await getData()
 </script>
 
 <style>

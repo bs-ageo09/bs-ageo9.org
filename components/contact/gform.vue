@@ -20,7 +20,7 @@ const links = [
 ]
 
 export default {
-  name: 'gform',
+  name: 'Gform',
   data () {
     return {
       links: links

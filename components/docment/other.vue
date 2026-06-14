@@ -18,7 +18,7 @@ const docs = [
 ]
 
 export default {
-  name: 'plan',
+  name: 'DocmentOther',
   data () {
     return {
       docs: docs

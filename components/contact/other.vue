@@ -22,7 +22,7 @@ const links = [
 ]
 
 export default {
-  name: 'plan',
+  name: 'ContactOther',
   data () {
     return {
       links: links
