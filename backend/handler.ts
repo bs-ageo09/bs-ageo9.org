@@ -1,15 +1,14 @@
 import { DataUsecase } from './usecase'
 
-const jsonResponse = response => {
-  ContentService.createTextOutput()
-  let output = ContentService.createTextOutput()
+const jsonResponse = (response: unknown) => {
+  const output = ContentService.createTextOutput()
   output.setMimeType(ContentService.MimeType.JSON)
   output.setContent(JSON.stringify(response))
 
   return output
 }
 
-function doGet(e) {
+function doGet(e: GoogleAppsScript.Events.DoGet) {
   const type: string = e.parameter.type
   const uc = new DataUsecase()
   switch (type) {
@@ -30,3 +29,7 @@ function doGet(e) {
     msg: 'resource not found'
   })
 }
+
+// バンドル(IIFE)後も GAS から呼び出せるよう doGet をグローバルへ公開する。
+;(globalThis as unknown as { doGet: typeof doGet }).doGet = doGet
+

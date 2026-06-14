@@ -12,7 +12,13 @@ export class Events {
   constructor(
     index: number,
     isInformation: boolean,
-    eventName, heading, date, text, docLink, docPreview, docName: string) {
+    eventName: string,
+    heading: string,
+    date: string,
+    text: string,
+    docLink: string,
+    docPreview: string,
+    docName: string) {
     this.index = index
     this.isInformation = isInformation
     this.eventName = eventName
@@ -45,7 +51,11 @@ export class Address {
   type: string
 
   constructor(
-    rank, name, nameHira, number, type: string) {
+    rank: string,
+    name: string,
+    nameHira: string,
+    number: string,
+    type: string) {
     this.rank = rank
     this.name = name
     this.nameHira = nameHira
@@ -70,7 +80,7 @@ export class Paper {
   link: string
   name: string
 
-  constructor(index: number, isValid: boolean, link, name: string) {
+  constructor(index: number, isValid: boolean, link: string, name: string) {
     this.index = index
     this.isValid = isValid
     this.link = link

@@ -1,20 +1,21 @@
 import { Events, Address, Paper } from './models'
 
+type Row = Record<string, any>
+
 export class SpreadsheetRepository {
   findEventsList(): Events[] {
-    const rows =  SpreadsheetApp
+    const rows = SpreadsheetApp
       .getActiveSpreadsheet()
-      .getSheetByName('event')
+      .getSheetByName('event')!
       .getDataRange()
       .getValues()
     const keys = rows.splice(0, 1)[0]
 
     return rows.map(row => {
-      let obj = {}
+      const obj: Row = {}
       row.forEach((item, index) => {
         obj[keys[index]] = item
       })
-      Logger.log(obj)
       return new Events(
         obj['index'],
         obj['is_information'],
@@ -30,19 +31,18 @@ export class SpreadsheetRepository {
   }
 
   findAddressList(): Address[] {
-    const rows =  SpreadsheetApp
+    const rows = SpreadsheetApp
       .getActiveSpreadsheet()
-      .getSheetByName('address')
+      .getSheetByName('address')!
       .getDataRange()
       .getValues()
     const keys = rows.splice(0, 1)[0]
 
     return rows.map(row => {
-      let obj = {}
+      const obj: Row = {}
       row.forEach((item, index) => {
         obj[keys[index]] = item
       })
-      Logger.log(obj)
       return new Address(
         obj['rank'],
         obj['name'],
@@ -54,19 +54,18 @@ export class SpreadsheetRepository {
   }
 
   findPaperList(): Paper[] {
-    const rows =  SpreadsheetApp
+    const rows = SpreadsheetApp
       .getActiveSpreadsheet()
-      .getSheetByName('paper')
+      .getSheetByName('paper')!
       .getDataRange()
       .getValues()
     const keys = rows.splice(0, 1)[0]
 
     return rows.map(row => {
-      let obj = {}
+      const obj: Row = {}
       row.forEach((item, index) => {
         obj[keys[index]] = item
       })
-      Logger.log(obj)
       return new Paper(
         obj['index'],
         obj['is_valid'],
@@ -77,9 +76,9 @@ export class SpreadsheetRepository {
   }
 
   findOthersValueByKey(key: string): string {
-    const rows =  SpreadsheetApp
+    const rows = SpreadsheetApp
       .getActiveSpreadsheet()
-      .getSheetByName('other')
+      .getSheetByName('other')!
       .getDataRange()
       .getValues()
 

@@ -72,6 +72,9 @@ typings/
 # Nuxt generate
 dist
 
+# GAS bundle output (backend)
+dist-gas
+
 # vuepress build output
 .vuepress/dist
 
