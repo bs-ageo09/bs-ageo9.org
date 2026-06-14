@@ -17,10 +17,12 @@
         <iframe class="doc" :src='`${event.doc_preview}#page=1`' height="700" width="500" frameborder="0"/>
       </p>
     </div>
-    <h3>募集案内</h3>
-    <p>
-      <a :href="recruitment_pdf">こちら</a>からスカウト募集チラシをご覧になれます
-    </p>
+    <template v-if="recruitment_pdf">
+      <h3>募集案内</h3>
+      <p>
+        <a :href="recruitment_pdf">こちら</a>からスカウト募集チラシをご覧になれます
+      </p>
+    </template>
     <h3>ボーイスカウト日本連盟 PR動画</h3>
     <p class="movie-wrap">
       <iframe
@@ -54,16 +56,21 @@
 const runtimeConfig = useRuntimeConfig()
 
 const getData = async (type, key) => {
-  const response = await fetch(`${runtimeConfig.public.backendApi}?type=${type}&key=${key}`, {
-    method: "GET",
-  })
-  return await response.json()
+  const base = runtimeConfig.public.backendApi
+  if (!base) return null
+  try {
+    const response = await fetch(`${base}?type=${type}&key=${key}`)
+    if (!response.ok) return null
+    return await response.json()
+  } catch {
+    return null
+  }
 }
 
-let events = []
-events = await getData('event', '')
-const recruitment_pdf_res = await getData('other', 'recruitment_pdf')
-const recruitment_pdf = recruitment_pdf_res['val']
+const eventsData = await getData('event', '')
+const events = Array.isArray(eventsData) ? eventsData : []
+const recruitmentPdfRes = await getData('other', 'recruitment_pdf')
+const recruitment_pdf = recruitmentPdfRes?.val ?? ''
 </script>
 
 <style>

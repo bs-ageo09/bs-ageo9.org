@@ -15,11 +15,16 @@
 <script setup>
 const runtimeConfig = useRuntimeConfig()
 const getData = async () => {
-  const response = await fetch(`${runtimeConfig.public.backendApi}?type=other&key=plan_vs`, {
-    method: "GET",
-  })
-  const json = await response.json()
-  return json['val']
+  const base = runtimeConfig.public.backendApi
+  if (!base) return ''
+  try {
+    const response = await fetch(`${base}?type=other&key=plan_vs`)
+    if (!response.ok) return ''
+    const json = await response.json()
+    return json?.val ?? ''
+  } catch {
+    return ''
+  }
 }
 
 const path = await getData()

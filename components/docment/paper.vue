@@ -12,14 +12,19 @@
 <script setup>
 const runtimeConfig = useRuntimeConfig()
 const getData = async () => {
-  const response = await fetch(`${runtimeConfig.public.backendApi}?type=paper`, {
-    method: "GET",
-  })
-  return await response.json()
+  const base = runtimeConfig.public.backendApi
+  if (!base) return []
+  try {
+    const response = await fetch(`${base}?type=paper`)
+    if (!response.ok) return []
+    const json = await response.json()
+    return Array.isArray(json) ? json : []
+  } catch {
+    return []
+  }
 }
 
-let papers = []
-papers = await getData()
+const papers = await getData()
 </script>
 
 <style>

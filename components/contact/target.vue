@@ -26,14 +26,19 @@
 <script setup>
 const runtimeConfig = useRuntimeConfig()
 const getData = async () => {
-  const response = await fetch(`${runtimeConfig.public.backendApi}?type=address`, {
-    method: "GET",
-  })
-  return await response.json()
+  const base = runtimeConfig.public.backendApi
+  if (!base) return []
+  try {
+    const response = await fetch(`${base}?type=address`)
+    if (!response.ok) return []
+    const json = await response.json()
+    return Array.isArray(json) ? json : []
+  } catch {
+    return []
+  }
 }
 
-let rows = []
-rows = await getData()
+const rows = await getData()
 </script>
 
 <style>
