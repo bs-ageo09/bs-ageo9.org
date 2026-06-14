@@ -15,7 +15,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "nuxi typecheck"
+    "typecheck": "nuxi typecheck",
+    "typecheck:backend": "tsc -p tsconfig.backend.json"
   },
   "dependencies": {
     "cross-env": "^10.1.0",

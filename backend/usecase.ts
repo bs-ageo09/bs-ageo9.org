@@ -1,10 +1,7 @@
-import { Events, Address, Paper } from './models'
+import type { Events, Address, Paper } from './models'
 import { SpreadsheetRepository } from './repository'
 
 export class DataUsecase {
-  constructor() {
-  }
-
   collectEvents(): Events[] {
     const repo = new SpreadsheetRepository()
 
