@@ -20,15 +20,19 @@ function resolveAppEnv() {
 
 /*
 ** backendApi の解決
-** NUXT_PUBLIC_BACKEND_API が明示指定されていれば最優先で使用し、
-** なければ判定した環境に対応する .env.<env> から読み込む。
+** 運用側で NUXT_PUBLIC_BACKEND_API が明示指定されていれば最優先で使用し、
+** なければ判定した環境に対応する .env.<env> の BACKEND_API を読み込む。
+** ※ .env.<env> のキーは敢えて NUXT_PUBLIC_ プレフィックスを付けない。
+**   将来 Nuxt が .env.<envName> を自動読込するようになっても、Nuxt 標準の
+**   NUXT_PUBLIC_* 自動オーバーライドと衝突して resolveAppEnv() の判定が
+**   バイパスされるのを防ぐため。
 */
 function loadBackendApi() {
   if (process.env.NUXT_PUBLIC_BACKEND_API) return process.env.NUXT_PUBLIC_BACKEND_API
   try {
     const file = resolve(process.cwd(), `.env.${resolveAppEnv()}`)
     const content = readFileSync(file, 'utf-8')
-    const match = content.match(/^\s*NUXT_PUBLIC_BACKEND_API\s*=\s*(.*)\s*$/m)
+    const match = content.match(/^\s*BACKEND_API\s*=\s*(.*)\s*$/m)
     return match ? match[1].trim().replace(/^['"]|['"]$/g, '') : ''
   } catch {
     return ''
