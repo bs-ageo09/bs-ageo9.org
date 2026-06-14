@@ -6,7 +6,7 @@ website of 9th Ageo Group, Saitama Scout Council, SAJ
 
 ## frontend
 
-Nuxt 3（SPA）+ Cloudflare Pages。
+Nuxt 4（SPA）+ Cloudflare Pages。
 
 バックエンド（GAS）へは CORS を回避するため、同一オリジンのサーバープロキシ
 `server/api/backend`（Cloudflare Pages Functions として動作）経由でアクセスする。
