@@ -1,4 +1,4 @@
-name: clasp
+name: backend-prod
 
 env:
   CLASPRC_JSON: ${{ secrets.CLASPRC_JSON }}
