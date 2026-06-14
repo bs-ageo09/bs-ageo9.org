@@ -1,7 +1,7 @@
 <template>
   <div id="plan">
     <h3>年間計画書</h3>
-    <div v-for="(doc, key, index) in docs" :key="index">
+    <div v-for="doc in docs" :key="doc.name">
       <p>
         <a :href=doc.link>{{ doc.name }}</a>
       </p>
@@ -24,32 +24,20 @@ const getData = async (key) => {
   }
 }
 
-const request = [
-  getData('plan_vbs'),
-  getData('plan_cs'),
-  getData('plan_bs'),
-  getData('plan_vs'),
-]
-
-const response = await Promise.all(request)
-const docs = [
-  {
-    name: 'ビーバー隊',
-    link: response[0]
-  },
-  {
-    name: 'カブ隊',
-    link: response[1]
-  },
-  {
-    name: 'ボーイ隊',
-    link: response[2]
-  },
-  {
-    name: 'ベンチャー隊',
-    link: response[3]
-  }
-]
+const { data: docs } = await useAsyncData('plan-docs', async () => {
+  const response = await Promise.all([
+    getData('plan_vbs'),
+    getData('plan_cs'),
+    getData('plan_bs'),
+    getData('plan_vs'),
+  ])
+  return [
+    { name: 'ビーバー隊', link: response[0] },
+    { name: 'カブ隊', link: response[1] },
+    { name: 'ボーイ隊', link: response[2] },
+    { name: 'ベンチャー隊', link: response[3] }
+  ]
+}, { default: () => [] })
 </script>
 
 <style>

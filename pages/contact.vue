@@ -11,24 +11,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import target from '@/components/contact/target'
 import gform from '@/components/contact/gform'
 import other from '@/components/contact/other'
-
-export default {
-  name: 'Contact',
-  components: {
-    target,
-    gform,
-    other
-  },
-  data () {
-    return {
-      targets: []
-    }
-  }
-}
 </script>
 
 <style>

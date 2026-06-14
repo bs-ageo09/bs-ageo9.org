@@ -3,7 +3,7 @@
     <h3>問い合わせフォームから</h3>
     <p>下記リンクのフォームに必要事項を入力し送信してください。 その他問合せ欄に体験入隊希望とご記入ください。後日当団よりご連絡いたします。
     </p>
-    <div v-for="(link, key, index) in links" :key="index">
+    <div v-for="link in links" :key="link.url">
       <p>
         <a :href=link.url>{{ link.name }}</a>
       </p>
@@ -11,22 +11,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 const links = [
   {
     name: 'お問い合わせフォーム（Google Forms）',
     url: 'https://forms.gle/Ym81K4bRQRNyi1A58'
   }
 ]
-
-export default {
-  name: 'Gform',
-  data () {
-    return {
-      links: links
-    }
-  }
-}
 </script>
 
 <style>

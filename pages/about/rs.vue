@@ -8,16 +8,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Rs',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 #rs {
   padding-left: 5vw;

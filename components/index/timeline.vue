@@ -13,16 +13,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Timeline',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 #timeline h2{
   font-size: 30px;

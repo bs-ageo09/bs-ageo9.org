@@ -1,7 +1,7 @@
 <template>
   <div id="other">
     <h3>AWARD</h3>
-    <div v-for="(doc, key, index) in docs" :key="index">
+    <div v-for="doc in docs" :key="doc.link">
       <p>
         <a :href=doc.link>{{ doc.name }}</a>
       </p>
@@ -9,22 +9,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 const docs = [
   {
     name: 'ベンチャー隊増田隊員研究発表「窒素酸化物その諸対象に及ぼす影響と実地測定結果」<',
     link: '/doc/chisso.PDF'
   }
 ]
-
-export default {
-  name: 'DocmentOther',
-  data () {
-    return {
-      docs: docs
-    }
-  }
-}
 </script>
 
 <style>

@@ -34,16 +34,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Teamnav',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 .boxmas{
   text-align: center;

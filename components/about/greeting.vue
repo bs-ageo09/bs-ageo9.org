@@ -20,16 +20,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Greeting',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 #greeting h2{
   font-size: 30px;

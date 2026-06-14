@@ -7,25 +7,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import introduction from '@/components/about/introduction'
 import teamnav from '@/components/teamnav'
 import vow from '@/components/about/vow'
 import greeting from '@/components/about/greeting'
-
-export default {
-  name: 'About',
-  components: {
-    introduction,
-    teamnav,
-    vow,
-    greeting
-  },
-  data () {
-    return {
-    }
-  }
-}
 </script>
 
 <style>

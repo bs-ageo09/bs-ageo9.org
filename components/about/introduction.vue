@@ -19,16 +19,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Introduction',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 #introduction h2{
   font-size: 30px;

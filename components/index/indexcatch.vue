@@ -6,16 +6,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Indexcatch',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 body{
   margin: 0;

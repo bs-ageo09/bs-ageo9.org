@@ -31,16 +31,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Vow',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 #vow h2{
   font-size: 30px;

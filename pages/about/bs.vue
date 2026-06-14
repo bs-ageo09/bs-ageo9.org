@@ -29,7 +29,7 @@ const getData = async () => {
   }
 }
 
-const path = await getData()
+const { data: path } = await useAsyncData('plan-bs', getData, { default: () => '' })
 </script>
 
 <style>
