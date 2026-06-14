@@ -1,49 +1,34 @@
-
-const envSet = require(`./env.${process.env.NODE_ENV || 'production'}.js`)
-
 export default defineNuxtConfig({
-  mode: 'universal',
-  target: 'static',
   /*
   ** Headers of the page
   */
-  head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+  app: {
+    head: {
+      title: process.env.npm_package_name || '',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: process.env.npm_package_description || '' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ]
+    }
   },
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
-  css: [
-  ],
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
-  /*
-  ** Nuxt.js modules
+  ** Nuxt modules
   */
   modules: [
     '@nuxt/eslint',
   ],
   /*
-  ** Build configuration
+  ** Runtime config
+  ** public.backendApi は環境変数 NUXT_PUBLIC_BACKEND_API で上書きする
+  ** （.env.development / .env.production を各 npm script の --dotenv で読み込む）
   */
-  buildModules: [
-  ],
   runtimeConfig: {
-    public: envSet,
+    public: {
+      backendApi: '',
+    },
   },
 })
