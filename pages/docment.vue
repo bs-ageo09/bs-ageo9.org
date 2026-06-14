@@ -8,23 +8,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import plan from '@/components/docment/plan'
 import paper from '@/components/docment/paper'
 import other from '@/components/docment/other'
-
-export default {
-  name: 'Docment',
-  components: {
-    plan,
-    paper,
-    other
-  },
-  data () {
-    return {
-    }
-  }
-}
 </script>
 
 <style>

@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, key, index) in rows" :key="index">
+        <tr v-for="(row, index) in rows" :key="index">
           <th scope="row">{{ row.rank }}</th>
           <td>{{ row.name }}</td>
           <td>{{ row.name_hira }}</td>
@@ -38,7 +38,7 @@ const getData = async () => {
   }
 }
 
-const rows = await getData()
+const { data: rows } = await useAsyncData('address', getData, { default: () => [] })
 </script>
 
 <style>

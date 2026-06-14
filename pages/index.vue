@@ -13,25 +13,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import indexcatch from '@/components/index/indexcatch'
 import information from '@/components/index/information'
 import timeline from '@/components/index/timeline'
 import announcement from '@/components/index/announcement'
-
-export default {
-  name: 'Index',
-  components: {
-    indexcatch,
-    information,
-    timeline,
-    announcement
-  },
-  data () {
-    return {
-    }
-  },
-}
 </script>
 
 <style>

@@ -4,19 +4,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import teamnav from '@/components/teamnav'
-
-export default {
-  name: 'Report',
-  components: {
-    teamnav
-  },
-  data () {
-    return {
-    }
-  }
-}
 </script>
 
 <style>

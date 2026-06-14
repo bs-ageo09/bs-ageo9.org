@@ -7,16 +7,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Appheader',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 body{
   margin: 0;

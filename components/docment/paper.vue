@@ -1,7 +1,7 @@
 <template>
   <div id="paper">
     <h3>機関紙「スカウトだより」</h3>
-    <div v-for="(paper, key, index) in papers" :key="index">
+    <div v-for="paper in papers" :key="paper.link">
       <p>
         <a :href=paper.link>{{ paper.name }}</a>
       </p>
@@ -24,7 +24,7 @@ const getData = async () => {
   }
 }
 
-const papers = await getData()
+const { data: papers } = await useAsyncData('papers', getData, { default: () => [] })
 </script>
 
 <style>

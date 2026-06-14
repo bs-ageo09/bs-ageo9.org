@@ -20,7 +20,7 @@ const getData = async () => {
   }
 }
 
-const path = await getData()
+const { data: path } = await useAsyncData('announcement-pdf', getData, { default: () => '' })
 </script>
 
 <style>

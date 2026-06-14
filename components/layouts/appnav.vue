@@ -2,7 +2,7 @@
   <div id="appnav">
     <nav>
       <ul class="gnav">
-        <li v-for="(link, key, index) in links" :key="index">
+        <li v-for="link in links" :key="link.url">
           <a :href=link.url>{{ link.name }}</a>
         </li>
       </ul>
@@ -10,35 +10,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      links: [
-        {
-          name: 'ホーム',
-          url: '/'
-        },
-        {
-          name: 'ボーイスカウトとは',
-          url: '/about'
-        },
-        {
-          name: '活動報告',
-          url: '/report'
-        },
-        {
-          name: '資料',
-          url: '/docment'
-        },
-        {
-          name: 'お問い合わせ',
-          url: '/contact'
-        }
-      ]
-    }
-  }
-}
+<script setup>
+const links = [
+  { name: 'ホーム', url: '/' },
+  { name: 'ボーイスカウトとは', url: '/about' },
+  { name: '活動報告', url: '/report' },
+  { name: '資料', url: '/docment' },
+  { name: 'お問い合わせ', url: '/contact' }
+]
 </script>
 
 <style>

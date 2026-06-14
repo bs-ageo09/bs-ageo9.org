@@ -9,21 +9,12 @@
 
 
 
-<script>
+<script setup>
 import 'normalize.css'
 
 import appheader from '@/components/layouts/appheader'
 import appnav from '@/components/layouts/appnav'
 import appcopl from '@/components/layouts/appcopl'
-
-export default {
-  name: 'App',
-  components: {
-    appheader,
-    appnav,
-    appcopl
-  }
-}
 </script>
 
 <style>

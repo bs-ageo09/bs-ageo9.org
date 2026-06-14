@@ -1,7 +1,7 @@
 <template>
   <div id="other">
     <h3>その他</h3>
-    <div v-for="(link, key, index) in links" :key="index">
+    <div v-for="link in links" :key="link.url">
       <p>
         <a :href=link.url>{{ link.name }}</a>
       </p>
@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 const links = [
   {
     name: 'Facebook',
@@ -20,15 +20,6 @@ const links = [
     url: 'https://github.com/bs-ageo09/bs-ageo9.org'
   }
 ]
-
-export default {
-  name: 'ContactOther',
-  data () {
-    return {
-      links: links
-    }
-  }
-}
 </script>
 
 <style>

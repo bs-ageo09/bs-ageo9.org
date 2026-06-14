@@ -7,16 +7,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Appcopl',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
 <style>
 #appcopl {
   text-align: center;

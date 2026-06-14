@@ -1,12 +1,12 @@
 <template>
   <div id="information">
     <h2>ご案内</h2>
-    <div v-for="event in events" :key='event'>
+    <div v-for="(event, index) in events" :key="index">
       <h3>{{ event.event_name }}のお知らせ</h3>
       <h4>{{ event.heading }}</h4>
       <p>{{ event.date }}</p>
       <ul>
-        <li v-for="text in event.text.split('\n')" :key='text'>
+        <li v-for="(text, i) in event.text.split('\n')" :key="i">
          {{ text }}
         </li>
       </ul>
@@ -67,10 +67,15 @@ const getData = async (type, key) => {
   }
 }
 
-const eventsData = await getData('event', '')
-const events = Array.isArray(eventsData) ? eventsData : []
-const recruitmentPdfRes = await getData('other', 'recruitment_pdf')
-const recruitment_pdf = recruitmentPdfRes?.val ?? ''
+const { data: events } = await useAsyncData('events', async () => {
+  const res = await getData('event', '')
+  return Array.isArray(res) ? res : []
+}, { default: () => [] })
+
+const { data: recruitment_pdf } = await useAsyncData('recruitment-pdf', async () => {
+  const res = await getData('other', 'recruitment_pdf')
+  return res?.val ?? ''
+}, { default: () => '' })
 </script>
 
 <style>
