@@ -11,6 +11,11 @@ updates:
       npm-all:
         patterns:
           - "*"
+    ignore:
+      # TypeScript 7 (ネイティブコンパイラ) は @typescript-eslint / ts-api-utils が
+      # 未対応で ESLint がクラッシュするため、対応されるまでメジャー更新を止める
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
