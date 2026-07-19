@@ -77,4 +77,20 @@ export default defineNuxtConfig({
       backendApi: '/api/backend',
     },
   },
+  /*
+  ** nuxt 4.5.0 + nitropack 2.13.4 のビルドエラー回避
+  ** nitro は server ビルド時に `typeof window` を文字列 `"undefined"` へ
+  ** テキスト置換するが、unhead@3.1.8 の streamingIifeCode
+  ** (unhead/dist/stream/iife.mjs) は「文字列リテラル内」に typeof window を
+  ** 含むため、二重引用符が注入され rollup の構文エラーになる。
+  ** 置換値を単一引用符の `'undefined'` にすれば文字列リテラルを壊さず、
+  ** サーバーコード上の意味も同一。streamingIifeCode はストリーミング SSR
+  ** 専用で、本アプリは ssr:false のため実行時の影響もない。
+  ** upstream 修正後（unhead が文字列を分割 or nitro が置換を修正）は削除可。
+  */
+  nitro: {
+    replace: {
+      'typeof window': "'undefined'",
+    },
+  },
 })
