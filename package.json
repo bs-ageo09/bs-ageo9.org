@@ -26,9 +26,9 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.16.0",
+    "@nuxt/eslint": "^1.17.0",
     "@types/google-apps-script": "^2.0.12",
-    "eslint": "^10.8.0",
+    "eslint": "^10.8.1",
     "esbuild": "^0.28.1",
     "nuxt": "^4.5.2",
     "prettier": "^3.9.6",
