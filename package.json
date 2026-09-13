@@ -27,8 +27,8 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.17.0",
-    "@types/google-apps-script": "^2.0.12",
-    "eslint": "^10.9.1",
+    "@types/google-apps-script": "^2.0.13",
+    "eslint": "^10.10.0",
     "esbuild": "^0.28.1",
     "nuxt": "^4.5.2",
     "prettier": "^3.9.6",
