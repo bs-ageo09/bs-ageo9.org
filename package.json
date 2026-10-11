@@ -28,12 +28,12 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.17.0",
     "@types/google-apps-script": "^2.0.13",
-    "eslint": "^10.11.0",
+    "eslint": "^10.12.0",
     "esbuild": "^0.28.1",
-    "nuxt": "^4.5.2",
+    "nuxt": "^4.6.0",
     "prettier": "^3.9.9",
     "typescript": "~6.0.3",
-    "vue-tsc": "^3.3.11"
+    "vue-tsc": "^3.3.12"
   },
   "overrides": {
     "esbuild": "^0.28.1",
