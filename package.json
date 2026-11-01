@@ -30,7 +30,7 @@
     "@types/google-apps-script": "^2.0.13",
     "eslint": "^10.13.0",
     "esbuild": "^0.28.1",
-    "nuxt": "^4.6.2",
+    "nuxt": "^4.6.3",
     "prettier": "^3.9.10",
     "typescript": "~6.0.3",
     "vue-tsc": "^3.3.13"
