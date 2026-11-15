@@ -31,7 +31,7 @@
     "eslint": "^10.14.0",
     "esbuild": "^0.28.1",
     "nuxt": "^4.6.4",
-    "prettier": "^3.9.10",
+    "prettier": "^3.10.0",
     "typescript": "~6.0.3",
     "vue-tsc": "^3.3.14"
   },
